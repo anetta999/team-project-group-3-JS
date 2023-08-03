@@ -1,16 +1,11 @@
 .container {
   width: 100%;
+  max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
 }
 
-@media screen and (min-width: 375px) {
-  .container {
-    max-width: 375px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -19,18 +14,10 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
   .container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1428px;
-    padding-left: 18px;
-    padding-right: 18px;
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
