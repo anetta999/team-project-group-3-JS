@@ -1,21 +1,21 @@
 :root {
-  --light-theme-bcg: #rgba(246, 246, 246, 1);
-  --light-theme-bcg-header: #rgba(255, 255, 255, 1);
-  --ligth-theme-bcg-shoplist-block: #rgba(255, 255, 255, 1);
-  --light-theme-primary-text-color: #rgba(17, 17, 17, 1);
-  --light-theme-second-text-color: #rgba(180, 175, 175, 1);
-  --light-theme-categories-text-color: #rgba(17, 17, 17, 0.6);
-  --dark-theme-bcg: #rgba(32, 32, 36, 1);
-  --dark-theme-bcg-header: #rgba(17, 17, 17, 1);
-  --dark-theme-bcg-shoplist-block: #rgba(17, 17, 17, 1);
-  --dark-theme-primary-text-color: #rgba(255, 255, 255, 1);
-  --dark-theme-second-text-color: #rgba(180, 175, 175, 1);
-  --dark-theme-categories-text-color: #rgba(255, 255, 255, 0.6);
-  --gradient-bcg-color: #radial-gradient(
+  --light-theme-bcg: rgba(246, 246, 246, 1);
+  --light-theme-bcg-header: rgba(255, 255, 255, 1);
+  --ligth-theme-bcg-shoplist-block: rgba(255, 255, 255, 1);
+  --light-theme-primary-text-color: rgba(17, 17, 17, 1);
+  --light-theme-second-text-color: rgba(180, 175, 175, 1);
+  --light-theme-categories-text-color: rgba(17, 17, 17, 0.6);
+  --dark-theme-bcg: rgba(32, 32, 36, 1);
+  --dark-theme-bcg-header: rgba(17, 17, 17, 1);
+  --dark-theme-bcg-shoplist-block: rgba(17, 17, 17, 1);
+  --dark-theme-primary-text-color: rgba(255, 255, 255, 1);
+  --dark-theme-second-text-color: rgba(180, 175, 175, 1);
+  --dark-theme-categories-text-color: rgba(255, 255, 255, 0.6);
+  --gradient-bcg-color: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
     #4f2ee8 18.03%,
     #ffffff 100%
   );
-  --dump-bcg-color: #rgba(79, 46, 232, 1);
-  --home-bcg-color: #rgba(234, 198, 69, 1);
+  --dump-bcg-color: rgba(79, 46, 232, 1);
+  --home-bcg-color: rgba(234, 198, 69, 1);
 }
