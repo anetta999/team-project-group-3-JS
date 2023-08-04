@@ -6,6 +6,7 @@ import {
 
 const listEl = document.querySelector('.categories_list');
 const booksContainer = document.querySelector('.books-container');
+const booksContainerList = document.querySelector('.books-container-list');
 let chosenCategory = '';
 // console.log(listEl);
 
@@ -35,16 +36,16 @@ showCategoryListData();
 
 listEl.addEventListener('click', e => {
   let chosenListEl = document.querySelector('.chosen_category');
-  if (e.target === chosenListEl) {
+  if (e.target === chosenListEl || e.target === e.currentTarget) {
     return;
   }
   chosenCategory = e.target.textContent;
-  console.log(chosenCategory);
+  //   console.log(chosenCategory);
   chosenListEl.classList.remove('chosen_category');
   //   console.log(chosenListEl);
   e.target.classList.add('chosen_category');
   chosenListEl = e.target;
-  console.log(chosenListEl);
+  //   console.log(chosenListEl);
   displayCategory(chosenCategory);
 });
 
@@ -52,25 +53,51 @@ listEl.addEventListener('click', e => {
 async function displayCategory(chosenCategory) {
   try {
     const data = await fetchSelectCategory(chosenCategory);
-    console.log(data);
-    // console.log(createCategoryBooksMarkap(data));
-    booksContainer.innerHTML = createCategoryBooksMarkap(data);
+    categoryTitleEl = document.querySelector('.title-color1');
+    categoryTitleSpanEl = document.querySelector('.title-color2');
+    categoryTitleEl.textContent = chosenCategory.substring(
+      0,
+      stringFirstSpace(chosenCategory)
+    );
+    categoryTitleSpanEl.textContent = chosenCategory.substring(
+      stringFirstSpace(chosenCategory)
+    );
+    booksContainerList.innerHTML = createCategoryBooksMarkap(data);
   } catch {
     console.error(error);
   }
 }
+//indexof first space in string
+function stringFirstSpace(string) {
+  return string.indexOf(' ');
+}
+// function createCategoryTitleMarkap(title, element) {
+//   console.log(stringFirstSpace(element));
+//   title = `<h2 class="category-name">${element.substring(
+//     0,
+//     stringFirstSpace(element)
+//   )}<span class = "title-color">${element.substring(
+//     stringFirstSpace(element)
+//   )}</span></h2>`;
+//   return title;
+// }
+
 //Creating Markap for each book from category
 function createCategoryBooksMarkap(arr) {
-  return arr.map(({ _id, book_image, title, author }) => {
-    return `<div div-id="${_id}">
-  <a href=""
-    ><img src="${book_image}" alt="${title}" class="" />
-    <p>${title}</p>
-    <p>${author}</p
-  ></a>
-</div>`;
-  });
+  return arr
+    .map(({ _id, book_image, title, author }) => {
+      return `<li li-id="${_id}" class="book-card">
+  <a href="" class="book-card-thumb"
+    ><div class="thumb">
+    <img src="${book_image}" alt="${title}" class="" /></div>
+    <p class="book-card-title">${title}</p>
+    <p class="book-card-author">${author}</p
+  ></a></li>`;
+    })
+    .join('');
 }
+
+//Stas part
 // showCategory('Picture Books');
 
 // async function displayTopBooks() {
