@@ -45,11 +45,11 @@ listEl.addEventListener('click', e => {
   e.target.classList.add('chosen_category');
   chosenListEl = e.target;
   console.log(chosenListEl);
-  showCategory(chosenCategory);
+  displayCategory(chosenCategory);
 });
 
 // Geting data for special Category and drowing HTML elements
-async function showCategory(chosenCategory) {
+async function displayCategory(chosenCategory) {
   try {
     const data = await fetchSelectCategory(chosenCategory);
     console.log(data);
