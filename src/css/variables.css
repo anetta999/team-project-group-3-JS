@@ -18,4 +18,5 @@
   );
   --dump-bcg-color: rgba(79, 46, 232, 1);
   --home-bcg-color: rgba(234, 198, 69, 1);
+  --transition-func: cubic-bezier(0.4, 0, 0.2, 1);
 }
