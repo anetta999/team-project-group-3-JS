@@ -1,5 +1,5 @@
 import { fetchSelectCategory } from './api.js';
-import { displayTopBooks } from './top-books.js';
+import { displayTopBooks } from './top-book.js';
 
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
