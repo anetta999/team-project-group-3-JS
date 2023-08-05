@@ -1,4 +1,5 @@
 import { fetchSelectCategory } from './api.js';
+import { displayTopBooks } from './top-books.js';
 
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
@@ -9,13 +10,19 @@ listEl.addEventListener('click', e => {
   if (e.target === chosenListEl || e.target === e.currentTarget) {
     return;
   }
+  if (e.target.textContent === 'All Categories') {
+    displayTopBooks();
+    chosenCategory = e.target.textContent;
+    chosenListEl.classList.remove('chosen_category');
+    e.target.classList.add('chosen_category');
+    chosenListEl = e.target;
+    return;
+  }
+
   chosenCategory = e.target.textContent;
-  //   console.log(chosenCategory);
   chosenListEl.classList.remove('chosen_category');
-  //   console.log(chosenListEl);
   e.target.classList.add('chosen_category');
   chosenListEl = e.target;
-  //   console.log(chosenListEl);
   displayCategory(chosenCategory);
 });
 
@@ -23,20 +30,22 @@ listEl.addEventListener('click', e => {
 async function displayCategory(chosenCategory) {
   try {
     const data = await fetchSelectCategory(chosenCategory);
-    categoryTitleEl = document.querySelector('.title-color1');
-    categoryTitleSpanEl = document.querySelector('.title-color2');
-    categoryTitleEl.textContent = chosenCategory.substring(
-      0,
-      stringFirstSpace(chosenCategory)
-    );
-    categoryTitleSpanEl.textContent = chosenCategory.substring(
-      stringFirstSpace(chosenCategory)
-    );
+    displayTitle(chosenCategory);
     booksContainerList.innerHTML = createCategoryBooksMarkap(data);
   } catch {
     console.error(error);
   }
 }
+
+function displayTitle(element) {
+  categoryTitleEl = document.querySelector('.title-color1');
+  categoryTitleSpanEl = document.querySelector('.title-color2');
+  categoryTitleEl.textContent = element.substring(0, stringFirstSpace(element));
+  categoryTitleSpanEl.textContent = element.substring(
+    stringFirstSpace(element)
+  );
+}
+
 //indexof first space in string
 function stringFirstSpace(string) {
   return string.indexOf(' ');
@@ -56,3 +65,5 @@ function createCategoryBooksMarkap(arr) {
     })
     .join('');
 }
+
+export { displayTitle };
