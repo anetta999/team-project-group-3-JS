@@ -4,6 +4,7 @@ import { displayTopBooks } from './top-book.js';
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
 let chosenCategory = '';
+let categoryTitleEl, categoryTitleSpanEl;
 
 listEl.addEventListener('click', e => {
   let chosenListEl = document.querySelector('.chosen_category');
@@ -15,6 +16,7 @@ listEl.addEventListener('click', e => {
     chosenCategory = e.target.textContent;
     chosenListEl.classList.remove('chosen_category');
     e.target.classList.add('chosen_category');
+    displayTitle('All Categories');
     chosenListEl = e.target;
     return;
   }
