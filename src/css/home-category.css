@@ -1,4 +1,14 @@
 .container {
   display: flex;
-  column-gap: 40px;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    flex-wrap: nowrap;
+    column-gap: 40px;
+  }
 }

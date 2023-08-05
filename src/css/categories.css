@@ -10,12 +10,25 @@ a {
   text-decoration: none;
 }
 .categories_list {
-  max-width: 335px;
+  width: 335px;
   height: 228px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   list-style: none;
   outline: 1px solid tomato;
+}
+
+.categories_list::-webkit-scrollbar {
+  width: 8px;
+  height: 114px;
+}
+.categories_list::-webkit-scrollbar-thumb {
+  background-color: rgba(224, 224, 224, 1);
+  border-radius: 12px;
+}
+
+.categories_list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--light-theme-second-text-color);
 }
 
 .categories-list {
@@ -68,8 +81,14 @@ li {
   flex-wrap: wrap;
   row-gap: 40px;
 }
+.book-card {
+  border-radius: 8px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .book-card-thumb {
-  max-width: 335px;
+  width: 335px;
   text-decoration: none; /* take out all underlines */
   font-family: inherit;
   color: var(--light-theme-primary-text-color);
@@ -122,6 +141,11 @@ li {
     margin-bottom: 32px;
   }
 
+  .categories_list::-webkit-scrollbar {
+    width: 8px;
+    height: 167px;
+  }
+
   .category_list_element {
     font-size: 18px;
     line-height: 1.33;
@@ -168,6 +192,10 @@ li {
     line-height: 1.33;
     letter-spacing: -0.36px;
   }
+  .category_list_element:is(:hover, :focus) {
+    transform: scale(1.01);
+    transition: transform 250ms var(--transition-func);
+  }
   /* -----------------each category styles -----------------*/
 
   .books {
@@ -188,8 +216,9 @@ li {
     transform: scale(1.1);
     transition: transform 250ms var(--transition-func);
     transition: box-shadow 250ms var(--transition-func);
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    /* box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); */
+    box-shadow: 0px 0px 11px -5px var(--light-theme-second-text-color);
   }
   .books-container-list {
     column-gap: 24px;
