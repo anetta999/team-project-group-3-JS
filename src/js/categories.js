@@ -1,7 +1,6 @@
 import { fetchSelectCategory } from './api.js';
 
 const listEl = document.querySelector('.categories_list');
-const booksContainer = document.querySelector('.books-container');
 const booksContainerList = document.querySelector('.books-container-list');
 let chosenCategory = '';
 
