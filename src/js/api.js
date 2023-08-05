@@ -5,7 +5,6 @@ axios.defaults.baseURL = 'https://books-backend.p.goit.global/books/';
 async function fetchCategoryList() {
   const END_POINT = 'category-list';
   return await axios(`${END_POINT}`).then(async response => {
-    console.log(response); //тут можете побачити статуси та інфу про респонс
     return await response.data;
   });
 }
