@@ -1,1 +1,1 @@
-import './js/selectors.js';
+import './js/dark-theme.js';
