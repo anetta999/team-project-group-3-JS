@@ -1,0 +1,133 @@
+.support-container {
+  width: 280px;
+  height: 352px;
+  border-radius: 16px;
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+
+  padding-top: 28px;
+  padding-bottom: 20px;
+}
+.support-title {
+  padding-left: 40px;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 109%;
+  letter-spacing: -0.88px;
+  display: inline-block;
+}
+.support-list {
+  height: 188px;
+  padding-left: 40px;
+  list-style: none;
+  margin-top: 44px;
+  margin-bottom: 16px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.support-list::-webkit-scrollbar {
+  width: 0;
+}
+.support-item {
+  display: flex;
+  height: 32px;
+}
+.support-span {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 128%;
+  letter-spacing: -0.56px;
+  margin-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.support-image {
+  filter: brightness(0) invert(1);
+  max-width: 100%;
+  height: 32px;
+}
+.support-link:hover .support-image {
+  filter: none;
+}
+.support-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.btn-svg {
+  fill: #4f2ee8;
+}
+.support-btn:focus,
+.support-btn:hover,
+.support-btn:active {
+  background-color: #4f2ee8;
+  border-color: #4f2ee8;
+  box-shadow: 0px 0px 0px 10px rgba(79, 46, 232, 0.3);
+}
+.support-btn-top {
+  transform: rotate(180deg);
+  width: 32px;
+  height: 32px;
+  border: 1px solid #4f2ee8;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  align-items: center;
+  margin: auto;
+  background-color: #4f2ee8;
+  border-color: #4f2ee8;
+  box-shadow: 0px 0px 0px 10px rgba(79, 46, 232, 0.3);
+  display: none;
+}
+.btn-svg-top {
+  fill: #fff;
+}
+.support-btn:focus .btn-svg,
+.support-btn:hover .btn-svg {
+  fill: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .support-container {
+    height: 474px;
+  }
+  .support-title {
+    font-size: 24px;
+  }
+  .support-list {
+    height: 292px;
+  }
+  .support-btn {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+  .support-btn-top {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .support-container {
+    width: 356px;
+  }
+}
