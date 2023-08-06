@@ -1,2 +1,0 @@
-document.addEventListener("DOMContentLoaded",(()=>{const e=document.querySelector(".toggle-button");let t=localStorage.getItem("dark-theme");null===t?localStorage.setItem("dark-theme","off"):"on"===t&&(e.checked=!0,document.body.classList.toggle("dark-theme")),e.addEventListener("click",(function(){document.body.classList.toggle("dark-theme"),"on"===t?(localStorage.setItem("dark-theme","off"),t="off"):(localStorage.setItem("dark-theme","on"),t="on")}))}));
-//# sourceMappingURL=shopping-list.9405f5b3.js.map

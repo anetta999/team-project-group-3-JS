@@ -1,2 +1,0 @@
-document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector(".toggle-button"),t=localStorage.getItem("dark-theme");null===t?localStorage.setItem("dark-theme","off"):"on"===t&&(e.checked=!0,document.body.classList.toggle("dark-theme")),e.addEventListener("click",(function(){document.body.classList.toggle("dark-theme"),"on"===t?(localStorage.setItem("dark-theme","off"),t="off"):(localStorage.setItem("dark-theme","on"),t="on")}))}));
-//# sourceMappingURL=shopping-list.586852ef.js.map
