@@ -1,5 +1,6 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle } from './categories.js';
+import { displayTitle, displayCategory } from './categories.js';
+import { showCategoryListData } from './categories-list.js';
 
 async function displayTopBooks() {
   try {
@@ -9,6 +10,11 @@ async function displayTopBooks() {
     displayTitle('Best Sellers Books');
 
     topBookCard.innerHTML = createUl(response);
+
+    const buttonOpenCategory = document.querySelectorAll(
+      '.button-open-categories'
+    );
+    buttonHandler(buttonOpenCategory);
   } catch (error) {
     console.error(error);
   }
