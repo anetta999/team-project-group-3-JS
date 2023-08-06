@@ -2,9 +2,10 @@
 @import './fonts.css';
 @import './variables.css';
 @import './containers.css';
-/* @import './header.css';
+@import './header.css';
 @import './categories.css';
 @import './slider.css';
 @import './home.css';
 @import './home-category.css';
-/* @import './modal.css';
+@import './modal.css';
+@import './dark-theme.css';
