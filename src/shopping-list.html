@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/shopping-list.css" />
+    <link rel="stylesheet" href="./css/shopping-list-section.css" />
+    <title>Shopping list</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/shopping-list.css" />
-  <link rel="stylesheet" href="./css/shopping-list-section.css" />
-  <title>Shopping list</title>
-</head>
+  <body>
+    <include src="./partials/header-shopping-list.html"></include>
+    <include src="./partials/shopping-list-section.html"></include>
 
-<body>
-  <include src="./partials/header.html"></include>
-  <include src="./partials/shopping-list-section.html"></include>
-
-  <script type="module" src="./shopping-list.js"></script>
-</body>
-
+    <script type="module" src="./shopping-list.js"></script>
+  </body>
 </html>
