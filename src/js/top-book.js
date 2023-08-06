@@ -21,7 +21,7 @@ function createBooks(arr) {
       return `<li class="top-book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="" /></div>
+    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
