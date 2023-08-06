@@ -60,7 +60,7 @@ function createCategoryBooksMarkap(arr) {
       return `<li li-id="${_id}" class="book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img src="${book_image}" alt="${title}" class="" /></div>
+    <img src="${book_image}" alt="${title}" class="books-image" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;

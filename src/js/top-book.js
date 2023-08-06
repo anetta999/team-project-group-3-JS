@@ -17,10 +17,10 @@ async function displayTopBooks() {
 function createBooks(arr) {
   return arr
     .map(({ _id, book_image, title, author }) => {
-      return `<li li-id="${_id}" class="top-book-card">
+      return `<li li-id="${_id}" class="book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img src="${book_image}" alt="${title}" class="" /></div>
+    <img src="${book_image}" alt="${title}" class="top-books-image" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
@@ -31,9 +31,7 @@ function createBooks(arr) {
 function createButtonMarkap(list_name) {
   return `
       <div class="div-button">
-        <a data-list="${list_name}" href="" class="button-open-categories">
-          SEE MORE
-        </a>
+        <button data-list="${list_name}" href="" class="button-open-categories">SEE MORE</button>
       </div>
     `;
 }
@@ -42,7 +40,7 @@ function createUl(arr) {
   return arr
     .map(({ list_name, books }) => {
       return `<li class="top-books-ul">
-      <h2>${list_name}</h2>
+      <h2 class="top-books-category">${list_name}</h2>
       <ul class="top-books-list">${createBooks(books)}</ul>
       ${createButtonMarkap(list_name)}
         </li>
