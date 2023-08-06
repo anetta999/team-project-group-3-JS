@@ -6,7 +6,8 @@ async function displayTopBooks() {
     const response = await fetchTopBooks();
     const topBookCard = document.querySelector('.books-container-list');
 
-    displayTitle('All Categories');
+    // displayTitle('All Categories');
+    displayTitle('Best Sellers Books');
 
     topBookCard.innerHTML = createUl(response);
   } catch (error) {
@@ -20,27 +21,27 @@ function createBooks(arr) {
       return `<li class="top-book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="" /></div>
+    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
     })
     .join('');
 }
+
 function createButtonMarkap(list_name) {
   return `
       <div class="div-button">
-        <a data-list="${list_name}" href="" class="button-open-categories">
-          SEE MORE
-        </a>
+        <button data-list="${list_name}" href="" class="button-open-categories">SEE MORE</button>
       </div>
     `;
 }
+
 function createUl(arr) {
   return arr
     .map(({ list_name, books }) => {
       return `<li class="top-books-ul">
-      <h2>${list_name}</h2>
+      <h2 class="top-books-category">${list_name}</h2>
       <ul class="top-books-list">${createBooks(books)}</ul>
       ${createButtonMarkap(list_name)}
         </li>
