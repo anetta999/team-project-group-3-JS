@@ -17,7 +17,7 @@ async function showCategoryListData() {
 function createCategoriesMarkap(arr) {
   return arr
     .map(({ list_name }) => {
-      return `<li class="js_category_list_element category_list_element">${list_name}</li>`;
+      return `<li class="js_category_list_element category_list_element" data="${list_name}">${list_name}</li>`;
     })
     .join('');
 }
