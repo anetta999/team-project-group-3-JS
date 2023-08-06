@@ -69,4 +69,4 @@ function createCategoryBooksMarkap(arr) {
     .join('');
 }
 
-export { displayTitle };
+export { displayTitle, displayCategory };
