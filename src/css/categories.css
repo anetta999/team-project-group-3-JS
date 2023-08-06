@@ -2,7 +2,6 @@ body {
   background-color: var(--light-theme-bcg);
 }
 .categories {
-  padding-top: 40px;
   display: inline-block;
 }
 a {
@@ -11,12 +10,9 @@ a {
 .categories_list {
   width: 335px;
   height: 228px;
-  margin-left: 20px;
-  margin-right: 20px;
   overflow-x: hidden;
   overflow-y: scroll;
   list-style: none;
-  outline: 1px solid tomato;
 }
 
 .categories_list::-webkit-scrollbar {
