@@ -1,5 +1,6 @@
 import { fetchTopBooks } from './api.js';
 import { displayTitle, displayCategory } from './categories.js';
+import { showCategoryListData } from './categories-list.js';
 
 async function displayTopBooks() {
   try {
@@ -69,6 +70,15 @@ function createUl(arr) {
     .join('');
 }
 
-displayTopBooks();
+async function fetchDataInParallel() {
+  try {
+    const [] = await Promise.all([showCategoryListData(), displayTopBooks()]);
+  } catch (error) {
+    console.error(error);
+  }
+}
+fetchDataInParallel();
+
+// displayTopBooks();
 
 export { displayTopBooks };
