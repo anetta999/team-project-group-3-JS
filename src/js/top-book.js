@@ -1,6 +1,5 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle, displayCategory } from './categories.js';
-import { showCategoryListData } from './categories-list.js';
+import { displayTitle } from './categories.js';
 
 async function displayTopBooks() {
   try {
@@ -10,11 +9,6 @@ async function displayTopBooks() {
     displayTitle('Best Sellers Books');
 
     topBookCard.innerHTML = createUl(response);
-
-    const buttonOpenCategory = document.querySelectorAll(
-      '.button-open-categories'
-    );
-    buttonHandler(buttonOpenCategory);
   } catch (error) {
     console.error(error);
   }
@@ -34,6 +28,7 @@ function buttonHandler(arr) {
     });
   });
 }
+
 function createBooks(arr) {
   return arr
     .map(({ _id, book_image, title, author }) => {
