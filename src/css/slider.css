@@ -21,7 +21,11 @@
   font-weight: 700;
   line-height: 109%;
   letter-spacing: -0.88px;
-  display: inline-block;
+
+  display: flex;
+}
+.svg-title {
+  margin-left: 12px;
 }
 .support-list {
   height: 188px;
