@@ -16,7 +16,7 @@ listEl.addEventListener('click', e => {
     chosenCategory = e.target.textContent;
     chosenListEl.classList.remove('chosen_category');
     e.target.classList.add('chosen_category');
-    displayTitle('All Categories');
+    displayTitle('Best Sellers Books');
     chosenListEl = e.target;
     return;
   }
@@ -42,15 +42,16 @@ async function displayCategory(chosenCategory) {
 function displayTitle(element) {
   categoryTitleEl = document.querySelector('.title-color1');
   categoryTitleSpanEl = document.querySelector('.title-color2');
-  categoryTitleEl.textContent = element.substring(0, stringFirstSpace(element));
-  categoryTitleSpanEl.textContent = element.substring(
-    stringFirstSpace(element)
-  );
+  categoryTitleEl.textContent = element.substring(0, stringLastSpace(element));
+  categoryTitleSpanEl.textContent = element.substring(stringLastSpace(element));
 }
 
 //indexof first space in string
-function stringFirstSpace(string) {
-  return string.indexOf(' ');
+// function stringFirstSpace(string) {
+//   return string.indexOf(' ');
+// }
+function stringLastSpace(string) {
+  return string.lastIndexOf(' ');
 }
 
 //Creating Markap for each book from category

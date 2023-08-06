@@ -6,7 +6,8 @@ async function displayTopBooks() {
     const response = await fetchTopBooks();
     const topBookCard = document.querySelector('.books-container-list');
 
-    displayTitle('All Categories');
+    // displayTitle('All Categories');
+    displayTitle('Best Sellers Books');
 
     topBookCard.innerHTML = createUl(response);
   } catch (error) {
