@@ -27,6 +27,7 @@ function createBooks(arr) {
     })
     .join('');
 }
+
 function createButtonMarkap(list_name) {
   return `
       <div class="div-button">
@@ -36,6 +37,7 @@ function createButtonMarkap(list_name) {
       </div>
     `;
 }
+
 function createUl(arr) {
   return arr
     .map(({ list_name, books }) => {
