@@ -1,0 +1,7 @@
+body.dark-theme {
+    background: #202024;
+}
+
+.category_list_element.dark-theme {
+    color: rgba(255, 255, 255, 0.60);
+}
