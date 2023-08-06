@@ -1,18 +1,38 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle } from './categories.js';
+import { displayTitle, displayCategory } from './categories.js';
+import { showCategoryListData } from './categories-list.js';
 
 async function displayTopBooks() {
   try {
     const response = await fetchTopBooks();
     const topBookCard = document.querySelector('.books-container-list');
 
-    // displayTitle('All Categories');
     displayTitle('Best Sellers Books');
 
     topBookCard.innerHTML = createUl(response);
+
+    const buttonOpenCategory = document.querySelectorAll(
+      '.button-open-categories'
+    );
+    buttonHandler(buttonOpenCategory);
   } catch (error) {
     console.error(error);
   }
+}
+
+function buttonHandler(arr) {
+  arr.forEach(button => {
+    button.addEventListener('click', () => {
+      const chosenCategory = button.getAttribute('data-list');
+      displayCategory(chosenCategory);
+      const categoriesEl = document.querySelector(`[data="${chosenCategory}"]`);
+      const chosenElement = document.querySelector('.chosen_category');
+      chosenElement.classList.remove('chosen_category');
+      categoriesEl.classList.add('chosen_category');
+
+      categoriesEl.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  });
 }
 
 function createBooks(arr) {
@@ -50,6 +70,15 @@ function createUl(arr) {
     .join('');
 }
 
-displayTopBooks();
+async function fetchDataInParallel() {
+  try {
+    const [] = await Promise.all([showCategoryListData(), displayTopBooks()]);
+  } catch (error) {
+    console.error(error);
+  }
+}
+fetchDataInParallel();
+
+// displayTopBooks();
 
 export { displayTopBooks };
