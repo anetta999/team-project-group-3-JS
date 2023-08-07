@@ -193,8 +193,12 @@
   font-weight: 700;
 }
 
-.active-tab-mob {
+.active-link-mob {
   color: var(--light-theme-primary-text-color);
+}
+
+.active-shopping-icon {
+  fill: var(--light-theme-primary-text-color);
 }
 
 .no-active-tab {
