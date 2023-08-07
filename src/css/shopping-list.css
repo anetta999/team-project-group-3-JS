@@ -16,6 +16,11 @@
   padding-bottom: 40px;
 }
 
+.header-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 @media screen and (min-width: 768px) {
   .shopping-list {
     padding-top: 112px;
@@ -23,4 +28,12 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .support-container {
+    display: block;
+  }
+
+  .shopping-list-container {
+    display: flex;
+    gap: 40px;
+  }
 }

@@ -83,7 +83,7 @@ const creatImg = suppurtImg
     <a href="${url}" class="support-link"> <picture>
           <img class="support-image"
           src="${img}" alt="${title}" 
-          height="32" 
+          height="32"
           srcset="
           ${img} 1x
           ${img2x} 2x"/>
