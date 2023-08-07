@@ -36,17 +36,23 @@ function buttonHandler(arr) {
 }
 
 function createBooks(arr) {
+  const defaultImageUrl = '../img/default_img.jpg';
   return arr
     .map(({ _id, book_image, title, author }) => {
+      const imageSrc = book_image ? book_image : defaultImageUrl;
       return `<li class="top-book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
+    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${defaultImageUrl})" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
     })
     .join('');
+}
+
+function handleImageError(img, defaultImg) {
+  img.src = defaultImg;
 }
 
 function createButtonMarkap(list_name) {
@@ -79,6 +85,4 @@ async function fetchDataInParallel() {
 }
 fetchDataInParallel();
 
-// displayTopBooks();
-
-export { displayTopBooks };
+export { displayTopBooks, handleImageError };

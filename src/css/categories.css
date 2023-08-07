@@ -84,12 +84,13 @@ li {
   }
 
   .category_list_element {
+    cursor: pointer;
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.36px;
   }
   .category_list_element:is(:hover, :focus) {
-    transform: scale(1.01);
+    transform: scale(1.08);
     transition: transform 500ms var(--transition-func);
   }
 }

@@ -1,5 +1,5 @@
 import { fetchSelectCategory } from './api.js';
-import { displayTopBooks } from './top-book.js';
+import { displayTopBooks, handleImageError } from './top-book.js';
 
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
@@ -34,7 +34,7 @@ async function displayCategory(chosenCategory) {
     const data = await fetchSelectCategory(chosenCategory);
     displayTitle(chosenCategory);
     booksContainerList.innerHTML = createCategoryBooksMarkap(data);
-  } catch {
+  } catch (error) {
     console.error(error);
   }
 }
@@ -56,12 +56,14 @@ function stringLastSpace(string) {
 
 //Creating Markap for each book from category
 function createCategoryBooksMarkap(arr) {
+  const defaultImageUrl = '../img/default_img.jpg';
   return arr
     .map(({ _id, book_image, title, author }) => {
+      const imageSrc = book_image ? book_image : defaultImageUrl;
       return `<li class="book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
+    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${defaultImageUrl})" /></div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
