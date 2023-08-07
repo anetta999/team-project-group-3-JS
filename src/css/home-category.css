@@ -1,12 +1,7 @@
 .books {
   display: block;
-  margin-top: 40px;
 }
-.books-container {
-  width: 375px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 .books-image {
   display: block;
 }
@@ -75,17 +70,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .books-container {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .books {
-    margin-top: 98px;
-    margin-bottom: 100px;
-  }
-
   .category-name {
     font-size: 48px;
     line-height: 1.083;

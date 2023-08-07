@@ -12,13 +12,24 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/shopping-list.css" />
-    <link rel="stylesheet" href="./css/shopping-list-section.css" />
     <title>Shopping list</title>
   </head>
 
   <body>
-    <include src="./partials/header-shopping-list.html"></include>
-    <include src="./partials/shopping-list-section.html"></include>
+    <header class="header">
+      <div class="container header-container">
+        <include src="./partials/header-shopping-list.html"></include>
+      </div>
+    </header>
+
+    <main>
+      <section class="shopping-list">
+        <div class="container shopping-list-container">
+          <include src="./partials/slider.html"></include>
+          <include src="./partials/shopping-list-section.html"></include>
+        </div>
+      </section>
+    </main>
 
     <script type="module" src="./shopping-list.js"></script>
   </body>
