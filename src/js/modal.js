@@ -7,18 +7,19 @@ import bookshop from '../img/image3@1x.png';
 import bookshop_2x from '../img/image3@2x.png';
 import svg from '../img/sprite.svg';
 
+const bodyScrollLock = require('body-scroll-lock');
+
 const modal = document.querySelector('.modal');
 const list = document.querySelector('.books-container-list');
 const backdrop = document.querySelector('.backdrop');
-const scroll = document.querySelector('.container')
+const targetElement = document.querySelector('#no-scroll');
 
-const body = document.querySelector('body');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll; 
+const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+const BOOK_LS_KEY = 'shopplist'
 
 list.addEventListener('click', showBook);
 backdrop.addEventListener('click', onClickBackdrop);
-
-
-const BOOK_LS_KEY = 'shopplist'
 
 async function showBook(evt) {
     evt.preventDefault()
@@ -37,9 +38,10 @@ const bookId = evt.target.id
     const closeBtn = document.querySelector('.modal-close-btn'); 
     closeBtn.addEventListener('click', closeModal);
    
-    backdrop.classList.remove('is-hidden')
+    backdrop.classList.remove('is-hidden');
     window.addEventListener('keydown', onPressESC);
-    scroll.classList.add('container.no-scroll');
+    disableBodyScroll(targetElement);
+   
 
     const addBtn = document.querySelector('.modal-add-btn');
     const modalEl = document.querySelector('.modal-remove-text')
@@ -63,7 +65,6 @@ const bookId = evt.target.id
     console.error(error);
   }
 }
-// showBook(bookId);
 
 function addToShoppList(evt, btn, modEl, data){
     if(!evt.target.classList.contains('modal-add-btn')){
@@ -107,21 +108,21 @@ function removeFromShoppList(evt, remBtn, modalEl, data) {
 function createMarkupCardModal(arr) {
   let {_id, author, title, book_image, description, buy_links } = arr;
   return `
-  <button type="button" class="modal-close-btn" data-modal-close>
-        <svg class="modal-close-png">
+  <button type="button" class="modal-close-btn dark-close-btn" data-modal-close>
+        <svg class="modal-close-png dark-close-png">
           <use href="${svg}#x-close"></use>
         </svg>
       </button>
-  <div data-id=${_id} class="modal-id">
+  <div data-id=${_id} class="modal-id dark-modal-id">
   <div class="modal-card-item">
-   <img src="${book_image}" alt="${title}" class="modal-book-img" />
+   <img src="${book_image}" alt="${title}" class="modal-book-img dark-modal-book-img" />
    <div class="">
-     <h2 class="modal-book-name">${title}</h2>
-     <p class="modal-book-autor">${author}</p>
-     <p class="modal-book-info">${description}</p>
-     <div class="modal-box-link">
-       <a href="${buy_links[0].url}" class="modal-link" target="_blank">
-       <img class="modal-link-svg"
+     <h2 class="modal-book-name dark-modal-book-name">${title}</h2>
+     <p class="modal-book-autor dark-modal-book-autor">${author}</p>
+     <p class="modal-book-info dark-modal-book-info">${description}</p>
+     <div class="modal-box-link dark-modal-box-link">
+       <a href="${buy_links[0].url}" class="modal-link dark-modal-link" target="_blank">
+       <img class="modal-link-svg dark-modal-link-svg"
        src="${amazon}"
        srcset="
        ${amazon} 1x,
@@ -131,8 +132,8 @@ function createMarkupCardModal(arr) {
        height="19"
      />
        </a>
-       <a href="${buy_links[1].url}" class="modal-link" target="_blank">
-       <img class="modal-link-svg"
+       <a href="${buy_links[1].url}" class="modal-link dark-modal-link" target="_blank">
+       <img class="modal-link-svg dark-modal-link-svg"
        src="${aplle}"
        srcset="
        ${aplle} 1x,
@@ -142,8 +143,8 @@ function createMarkupCardModal(arr) {
        height="32"
      />
        </a>
-       <a href="${buy_links[4].url}" target="_blank">
-       <img class="modal-link-svg"
+       <a href="${buy_links[4].url}" target="_blank" class="modal-link dark-modal-link">
+       <img class="modal-link-svg dark-modal-link-svg"
           src="${bookshop}"
           srcset="
           ${bookshop} 1x,
@@ -156,8 +157,8 @@ function createMarkupCardModal(arr) {
        </div>
     </div>
     </div>
-    <button type="button" class="modal-add-btn">add to shopping list</button>
-    <p class="modal-remove-text is-hidden">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+    <button type="button" class="modal-add-btn dark-modal-add-btn">add to shopping list</button>
+    <p class="modal-remove-text dark-modal-remove-text is-hidden">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
     </div>
        `;
 };
@@ -165,13 +166,15 @@ function createMarkupCardModal(arr) {
 function closeModal() {
   backdrop.classList.add('is-hidden');
   window.removeEventListener('keydown', onPressESC);
-  scroll.classList.remove('container.no-scroll');
+  enableBodyScroll(targetElement)
+ 
 };
 
 function onPressESC(evt) {
   if (evt.code === 'Escape') {
     closeModal();
     window.removeEventListener('keydown', onPressESC);
+    enableBodyScroll(targetElement)
   }
 };
 
