@@ -3,5 +3,24 @@
 @import './variables.css';
 @import './containers.css';
 @import './header.css';
+@import './slider.css';
 @import './shopping-list-section.css';
 @import './dark-theme.css';
+
+.support-container {
+  display: none;
+}
+
+.shopping-list {
+  padding-top: 104px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .shopping-list {
+    padding-top: 112px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}
