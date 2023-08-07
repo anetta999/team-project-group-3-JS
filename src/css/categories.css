@@ -3,6 +3,7 @@ body {
 }
 .categories {
   display: inline-block;
+  margin-bottom: 40px;
 }
 a {
   text-decoration: none;
@@ -56,6 +57,9 @@ li {
   .categories_list {
     width: 337px;
     height: 472px;
+  }
+  .categories {
+    margin-bottom: 0;
   }
 
   .category_list_element:not(:last-child) {

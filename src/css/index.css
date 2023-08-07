@@ -9,3 +9,44 @@
 @import './home-category.css';
 @import './modal.css';
 @import './dark-theme.css';
+
+.home {
+  padding-top: 104px;
+  padding-bottom: 40px;
+}
+
+.header-container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .tablet-container {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .home {
+    padding-top: 112px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .tablet-container {
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
+    margin-bottom: 0px;
+  }
+
+  .home {
+    padding-bottom: 72px;
+  }
+
+  .home-container {
+    display: flex;
+    gap: 40px;
+  }
+}

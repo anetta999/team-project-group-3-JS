@@ -1,5 +1,5 @@
 .support-container {
-  width: 280px;
+  width: 335px;
   height: 352px;
   border-radius: 16px;
   background: radial-gradient(
@@ -11,6 +11,7 @@
 
   padding-top: 28px;
   padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 .support-title {
   padding-left: 40px;
@@ -111,6 +112,8 @@
 @media screen and (min-width: 768px) {
   .support-container {
     height: 474px;
+    width: 335px;
+    margin-bottom: 0px;
   }
   .support-title {
     font-size: 24px;
