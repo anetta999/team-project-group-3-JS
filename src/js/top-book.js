@@ -1,5 +1,5 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle, displayCategory } from './categories.js';
+import { displayTitle, displayCategory, setImageSrc } from './categories.js';
 import { showCategoryListData } from './categories-list.js';
 
 async function displayTopBooks() {
@@ -36,18 +36,7 @@ function buttonHandler(arr) {
 }
 
 function createBooks(arr) {
-  const defaultImageUrlMob = '../img/default_images/default_img_mobile.jpg';
-  const defaultImageUrlTab = '../img/default_images/default_img_table.jpg';
-  const defaultImageUrlDesc = '../img/default_images/default_img_desc.jpg';
-  let imgSrc;
-
-  if (window.matchMedia('(min-width: 1440px)').matches) {
-    imgSrc = defaultImageUrlDesc;
-  } else if (window.matchMedia('(min-width: 768px)').matches) {
-    imgSrc = defaultImageUrlTab;
-  } else {
-    imgSrc = defaultImageUrlMob;
-  }
+  let imgSrc = setImageSrc();
 
   return arr
     .map(({ _id, book_image, title, author }) => {
@@ -56,6 +45,7 @@ function createBooks(arr) {
   <a href="" class="book-card-thumb"
     ><div class="thumb">
     <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" /></div>
+    <div class="overlay">quick view</div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
