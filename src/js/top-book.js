@@ -1,6 +1,7 @@
 import { fetchTopBooks } from './api.js';
 import { displayTitle, displayCategory, setImageSrc } from './categories.js';
 import { showCategoryListData } from './categories-list.js';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 async function displayTopBooks() {
   try {
@@ -80,8 +81,13 @@ function createUl(arr) {
 }
 
 async function fetchDataInParallel() {
+  Loading.custom({
+    customSvgUrl: '../img/default_images/logo.svg',
+  });
+
   try {
     const [] = await Promise.all([showCategoryListData(), displayTopBooks()]);
+    Loading.remove();
   } catch (error) {
     console.error(error);
   }
