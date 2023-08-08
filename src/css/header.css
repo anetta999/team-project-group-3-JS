@@ -192,6 +192,8 @@
   border-radius: 36px;
   padding: 8px 16px;
   font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-func);
 }
 
 .active-link-mob {
@@ -204,6 +206,7 @@
 
 .no-active-tab {
   font-weight: 500;
+  transition: all 0.3s var(--transition-func);
 }
 
 .mob-user-logout {
@@ -298,16 +301,20 @@
     margin-right: 24px;
   }
 
-  .header-list-home,
   .header-user {
     transition: all 0.3s var(--transition-func);
   }
 
-  .header-list-home:hover,
-  .header-list-home:focus,
+  .active-tab:hover,
+  .active-tab:focus,
   .header-user:hover,
   .header-user:focus {
     border-radius: 6px;
+  }
+
+  .no-active-tab:hover,
+  .no-active-tab:focus {
+    scale: 1.1;
   }
 
   .header-list-shopping span {
