@@ -35,7 +35,7 @@ async function showBook(evt) {
   try {
     const data = await fetchBookId(bookId);
     modal.innerHTML = createMarkupCardModal(data);
-    hideLoader();
+
     const closeBtn = document.querySelector('.modal-close-btn');
     closeBtn.addEventListener('click', closeModal);
 
@@ -60,6 +60,7 @@ async function showBook(evt) {
         addToShoppList(evt, addBtn, modalEl, data);
       });
     }
+    hideLoader();
   } catch (error) {
     console.error(error);
   }
