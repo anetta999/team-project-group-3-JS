@@ -1,0 +1,76 @@
+.loader-open {
+  overflow: hidden;
+}
+
+.loader-backdrop {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(17, 17, 17, 0.5);
+  overflow: hidden;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+
+  width: 200px;
+  height: 140px;
+  background: var(--light-theme-second-text-color);
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+  perspective: 1000px;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  background: var(--dump-bcg-color) no-repeat;
+  background-size: 60px 10px;
+  background-image: linear-gradient(var(--home-bcg-color) 100px, transparent 0),
+    linear-gradient(var(--home-bcg-color) 100px, transparent 0),
+    linear-gradient(var(--home-bcg-color) 100px, transparent 0),
+    linear-gradient(var(--home-bcg-color) 100px, transparent 0),
+    linear-gradient(var(--home-bcg-color) 100px, transparent 0),
+    linear-gradient(var(--home-bcg-color), transparent 0);
+
+  background-position: 15px 30px, 15px 60px, 15px 90px, 105px 30px, 105px 60px,
+    105px 90px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  width: calc(50% - 10px);
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  border-radius: 8px;
+  background: rgba(220, 195, 102, 1) no-repeat;
+  background-size: 60px 10px;
+  background-image: linear-gradient(rgba(178, 150, 46, 1) 100px, transparent 0),
+    linear-gradient(rgba(178, 150, 46, 1) 100px, transparent 0),
+    linear-gradient(rgba(178, 150, 46, 1) 100px, transparent 0);
+  background-position: 50% 30px, 50% 60px, 50% 90px;
+  transform: rotateY(0deg);
+  transform-origin: left center;
+  animation: paging 1s linear infinite;
+}
+
+@keyframes paging {
+  to {
+    transform: rotateY(-180deg);
+  }
+}

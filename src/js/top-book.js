@@ -1,8 +1,10 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle, displayCategory } from './categories.js';
+import { displayTitle, displayCategory, setImageSrc } from './categories.js';
 import { showCategoryListData } from './categories-list.js';
+import { showLoader, hideLoader } from './loader.js';
 
 async function displayTopBooks() {
+  showLoader();
   try {
     const response = await fetchTopBooks();
     const topBookCard = document.querySelector('.books-container-list');
@@ -15,6 +17,7 @@ async function displayTopBooks() {
       '.button-open-categories'
     );
     buttonHandler(buttonOpenCategory);
+    hideLoader();
   } catch (error) {
     console.error(error);
   }
@@ -36,17 +39,26 @@ function buttonHandler(arr) {
 }
 
 function createBooks(arr) {
+  let imgSrc = setImageSrc();
+
   return arr
     .map(({ _id, book_image, title, author }) => {
+      const imageSrc = book_image ? book_image : imgSrc;
       return `<li class="top-book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
+    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
+    <div class="overlay"><p> quick view</p></div>
+    </div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
     })
     .join('');
+}
+
+function handleImageError(img, defaultImg) {
+  img.src = defaultImg;
 }
 
 function createButtonMarkap(list_name) {
@@ -71,14 +83,14 @@ function createUl(arr) {
 }
 
 async function fetchDataInParallel() {
+  showLoader();
   try {
     const [] = await Promise.all([showCategoryListData(), displayTopBooks()]);
+    hideLoader();
   } catch (error) {
     console.error(error);
   }
 }
 fetchDataInParallel();
 
-// displayTopBooks();
-
-export { displayTopBooks };
+export { displayTopBooks, handleImageError };
