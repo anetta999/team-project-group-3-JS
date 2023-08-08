@@ -2,7 +2,6 @@ import { fetchTopBooks } from './api.js';
 import { displayTitle, displayCategory, setImageSrc } from './categories.js';
 import { showCategoryListData } from './categories-list.js';
 import { showLoader, hideLoader } from './loader.js';
-// import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 async function displayTopBooks() {
   showLoader();
