@@ -60,8 +60,9 @@ function createCategoryBooksMarkap(arr) {
       return `<li class="book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" /></div>
-    <div class="overlay">quick view</div>
+    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
+    <div class="overlay"><p> quick view</p></div>
+    </div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
