@@ -1,7 +1,105 @@
 body.dark-theme {
-    background: #202024;
+    background-color: var(--dark-theme-bcg);
 }
 
-.category_list_element.dark-theme {
-    color: rgba(255, 255, 255, 0.60);
+.dark-theme .header-wrap {
+    border: 1.5px solid #FFF;
+    background-color: var(--dark-theme-bcg-header);
+}
+
+.dark-theme .header-logo-icon-text {
+    fill: #F3F3F3;
+}
+
+.dark-theme .header-link-home,
+.mob-link-home {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .category_list_element {
+    color: var(--dark-theme-categories-text-color);
+}
+
+.dark-theme .category_list_element.chosen_category {
+    color: var(--home-bcg-color);
+}
+
+.dark-theme .title-color1 {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .book-card-title {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .button-open-categories {
+    border: 2px solid var(--dump-bcg-color);
+    background: var(--dark-theme-bcg);
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .categories_list::-webkit-scrollbar-thumb {
+    background-color: var(--light-theme-categories-text-color);
+}
+
+/************* SHOPPING-LIST ***************/
+.dark-theme .header-link-shopping {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .shopping-icon {
+    fill: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .shop-main-title {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .shop-text-backgr {
+    color: var(--dark-theme-categories-text-color);
+}
+
+/*************** Modal ****************/
+.dark-theme .modal {
+    background: var(--dark-theme-bcg);
+    border: 2px solid var(--dark-theme-bcg);
+    overflow: inherit;
+}
+
+.dark-theme .modal-add-btn {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-remove-btn {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-remove-text {
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.dark-theme .modal-book-info {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-book-name {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-close-png {
+    stroke: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-link-svg {
+    background: var(--dark-theme-bcg);
+}
+
+.dark-theme .modal-link-svg:hover {
+    background: none;
+}
+
+.dark-theme .button-open-categories:is(:hover, :focus) {
+    border: 2px solid var(--dump-bcg-color);
+    background-color: var(--dump-bcg-color);
+    color: var(--dark-theme-primary-text-color);
 }
