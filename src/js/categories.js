@@ -46,17 +46,25 @@ function displayTitle(element) {
   categoryTitleSpanEl.textContent = element.substring(stringLastSpace(element));
 }
 
-//indexof first space in string
-// function stringFirstSpace(string) {
-//   return string.indexOf(' ');
-// }
 function stringLastSpace(string) {
   return string.lastIndexOf(' ');
 }
 
 //Creating Markap for each book from category
 function createCategoryBooksMarkap(arr) {
-  const defaultImageUrl = '../img/default_img.jpg';
+  const defaultImageUrlMob = '../img/default_images/default_img_mobile.jpg';
+  const defaultImageUrlTab = '../img/default_images/default_img_table.jpg';
+  const defaultImageUrlDesc = '../img/default_images/default_img_desc.jpg';
+  let imgSrc;
+
+  if (window.matchMedia('(min-width: 1440px)').matches) {
+    imgSrc = defaultImageUrlDesc;
+  } else if (window.matchMedia('(min-width: 768px)').matches) {
+    imgSrc = defaultImageUrlTab;
+  } else {
+    imgSrc = defaultImageUrlMob;
+  }
+
   return arr
     .map(({ _id, book_image, title, author }) => {
       const imageSrc = book_image ? book_image : defaultImageUrl;

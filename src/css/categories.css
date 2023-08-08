@@ -95,6 +95,6 @@ li {
   }
   .category_list_element:is(:hover, :focus) {
     transform: scale(1.08);
-    transition: all 500ms var(--transition-func);
+    transition: translate 500ms var(--transition-func);
   }
 }
