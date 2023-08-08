@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeSwitcher = document.querySelector('.toggle-button');
   let darkThemeCheck = localStorage.getItem('dark-theme');
 
+
   if (darkThemeCheck === null) {
     localStorage.setItem('dark-theme', 'off');
   } else {
