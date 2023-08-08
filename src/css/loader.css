@@ -1,4 +1,24 @@
+.loader-open {
+  overflow: hidden;
+}
+
+.loader-backdrop {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(17, 17, 17, 0.5);
+  overflow: hidden;
+}
+
 .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+
   width: 200px;
   height: 140px;
   background: #979794;
@@ -6,6 +26,7 @@
   position: relative;
   border-radius: 8px;
   perspective: 1000px;
+  transform: translate(-50%, -50%);
 }
 
 .loader:before {

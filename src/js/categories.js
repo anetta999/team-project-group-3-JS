@@ -1,5 +1,6 @@
 import { fetchSelectCategory } from './api.js';
 import { displayTopBooks, handleImageError } from './top-book.js';
+import { showLoader, hideLoader } from './loader.js';
 
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
@@ -30,10 +31,12 @@ listEl.addEventListener('click', e => {
 
 // Geting data for special Category and drowing HTML elements
 async function displayCategory(chosenCategory) {
+  showLoader();
   try {
     const data = await fetchSelectCategory(chosenCategory);
     displayTitle(chosenCategory);
     booksContainerList.innerHTML = createCategoryBooksMarkap(data);
+    hideLoader();
   } catch (error) {
     console.error(error);
   }

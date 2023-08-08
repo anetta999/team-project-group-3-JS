@@ -1,9 +1,11 @@
 import { fetchTopBooks } from './api.js';
 import { displayTitle, displayCategory, setImageSrc } from './categories.js';
 import { showCategoryListData } from './categories-list.js';
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { showLoader, hideLoader } from './loader.js';
+// import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 async function displayTopBooks() {
+  showLoader();
   try {
     const response = await fetchTopBooks();
     const topBookCard = document.querySelector('.books-container-list');
@@ -16,6 +18,7 @@ async function displayTopBooks() {
       '.button-open-categories'
     );
     buttonHandler(buttonOpenCategory);
+    hideLoader();
   } catch (error) {
     console.error(error);
   }
@@ -81,13 +84,10 @@ function createUl(arr) {
 }
 
 async function fetchDataInParallel() {
-  Loading.custom({
-    customSvgUrl: '../img/default_images/logo.svg',
-  });
-
+  showLoader();
   try {
     const [] = await Promise.all([showCategoryListData(), displayTopBooks()]);
-    Loading.remove();
+    hideLoader();
   } catch (error) {
     console.error(error);
   }
