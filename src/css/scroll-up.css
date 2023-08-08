@@ -1,0 +1,39 @@
+.scroll-up {
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+
+  border-radius: 75%;
+  border: none;
+  background: linear-gradient(
+    180deg,
+    var(--dump-bcg-color) 0%,
+    var(--home-bcg-color) 100%
+  );
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+
+  color: var(--ligth-theme-bcg-shoplist-block);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+
+  transition: all 0.2s ease;
+  opacity: 0;
+  scale: 1;
+  transform: translateY(40px);
+  transition: all 500ms var(--transition-func);
+}
+.showButton {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-up:is(:hover, :focus) {
+  scale: 1.1;
+}

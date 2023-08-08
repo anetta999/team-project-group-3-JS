@@ -22,6 +22,4 @@ function createCategoriesMarkap(arr) {
     .join('');
 }
 
-// showCategoryListData();
-
 export { showCategoryListData };

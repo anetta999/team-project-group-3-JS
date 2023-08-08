@@ -1,61 +1,66 @@
-<!-- <header class="header"> -->
-<div class="header-wrap">
-  <a class="header-logo link" href="./index.html" aria-label="Home">
-    <svg alt="Logo" width="24" height="24" class="header-logo-icon">
-      <use href="./img/sprite.svg#logo"></use>
-    </svg>
-    <svg alt="Logo-text" width="77" height="13.3" class="header-logo-icon-text">
-      <use href="./img/sprite.svg#Bookshelf_white"></use>
-    </svg>
-  </a>
-  <nav class="header-nav">
-    <ul class="header-list list">
-      <li class="header-list-home active-tab">
-        <a class="header-link-home link" href="./index.html">Home</a>
-      </li>
-      <li class="header-list-shopping no-active-tab">
-        <a class="header-link-shopping link" href="./shopping-list.html">
-          <span>Shopping list</span>
-          <svg width="20" height="20" class="shopping-icon">
-            <use href="./img/sprite.svg#shopper"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="toggle-wrap">
-    <input type="checkbox" id="toggle-button" class="toggle-button" />
+<header class="header">
+  <div class="header-wrap container">
+    <a class="header-logo link" href="./index.html" aria-label="Home">
+      <svg alt="Logo" width="24" height="24" class="header-logo-icon">
+        <use href="./img/sprite.svg#logo"></use>
+      </svg>
+      <svg
+        alt="Logo-text"
+        width="77"
+        height="13.3"
+        class="header-logo-icon-text"
+      >
+        <use href="./img/sprite.svg#Bookshelf_white"></use>
+      </svg>
+    </a>
+    <nav class="header-nav">
+      <ul class="header-list list">
+        <li class="header-list-home active-tab">
+          <a class="header-link-home link" href="./index.html">Home</a>
+        </li>
+        <li class="header-list-shopping no-active-tab">
+          <a class="header-link-shopping link" href="./shopping-list.html">
+            <span>Shopping list</span>
+            <svg width="20" height="20" class="shopping-icon">
+              <use href="./img/sprite.svg#shopper"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="toggle-wrap">
+      <input type="checkbox" id="toggle-button" class="toggle-button" />
+    </div>
+    <button type="button" class="header-user">
+      <img
+        class="header-user-img"
+        src="./img/user.jpg"
+        alt="user"
+        width="37"
+        height="37"
+      />
+      <span class="header-user-name">Stephen</span>
+      <svg width="28" height="28">
+        <use href="./img/sprite.svg#fi-ss-caret-down"></use>
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="mob-open-btn js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg width="28" height="28" aria-label="Menu">
+        <use href="./img/sprite.svg#burger-menu"></use>
+      </svg>
+    </button>
+    <button type="button" class="mob-close-btn js-close-menu">
+      <svg width="28" height="28">
+        <use href="./img/sprite.svg#x-close"></use>
+      </svg>
+    </button>
   </div>
-  <button type="button" class="header-user">
-    <img
-      class="header-user-img"
-      src="./img/user.jpg"
-      alt="user"
-      width="37"
-      height="37"
-    />
-    <span class="header-user-name">Stephen</span>
-    <svg width="28" height="28">
-      <use href="./img/sprite.svg#fi-ss-caret-down"></use>
-    </svg>
-  </button>
-  <button
-    type="button"
-    class="mob-open-btn js-open-menu"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-  >
-    <svg width="28" height="28" aria-label="Menu">
-      <use href="./img/sprite.svg#burger-menu"></use>
-    </svg>
-  </button>
-  <button type="button" class="mob-close-btn js-close-menu">
-    <svg width="28" height="28">
-      <use href="./img/sprite.svg#x-close"></use>
-    </svg>
-  </button>
-</div>
-<!-- </header> -->
+</header>
 
 <!-- Mob Menu -->
 <div class="mob-container js-menu-container" id="mobile-menu">

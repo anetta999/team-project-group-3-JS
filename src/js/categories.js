@@ -1,5 +1,6 @@
 import { fetchSelectCategory } from './api.js';
-import { displayTopBooks } from './top-book.js';
+import { displayTopBooks, handleImageError } from './top-book.js';
+import { showLoader, hideLoader } from './loader.js';
 
 const listEl = document.querySelector('.categories_list');
 const booksContainerList = document.querySelector('.books-container-list');
@@ -30,11 +31,13 @@ listEl.addEventListener('click', e => {
 
 // Geting data for special Category and drowing HTML elements
 async function displayCategory(chosenCategory) {
+  showLoader();
   try {
     const data = await fetchSelectCategory(chosenCategory);
     displayTitle(chosenCategory);
     booksContainerList.innerHTML = createCategoryBooksMarkap(data);
-  } catch {
+    hideLoader();
+  } catch (error) {
     console.error(error);
   }
 }
@@ -46,22 +49,23 @@ function displayTitle(element) {
   categoryTitleSpanEl.textContent = element.substring(stringLastSpace(element));
 }
 
-//indexof first space in string
-// function stringFirstSpace(string) {
-//   return string.indexOf(' ');
-// }
 function stringLastSpace(string) {
   return string.lastIndexOf(' ');
 }
 
 //Creating Markap for each book from category
 function createCategoryBooksMarkap(arr) {
+  let imgSrc = setImageSrc();
+
   return arr
     .map(({ _id, book_image, title, author }) => {
+      const imageSrc = book_image ? book_image : imgSrc;
       return `<li class="book-card">
   <a href="" class="book-card-thumb"
     ><div class="thumb">
-    <img id="${_id}" src="${book_image}" alt="${title}" class="books-image" /></div>
+    <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
+    <div class="overlay"><p> quick view</p></div>
+    </div>
     <p class="book-card-title">${title}</p>
     <p class="book-card-author">${author}</p
   ></a></li>`;
@@ -69,4 +73,18 @@ function createCategoryBooksMarkap(arr) {
     .join('');
 }
 
-export { displayTitle, displayCategory };
+function setImageSrc() {
+  const defaultImageUrlMob = '../img/default_images/default_img_mobile.jpg';
+  const defaultImageUrlTab = '../img/default_images/default_img_table.jpg';
+  const defaultImageUrlDesc = '../img/default_images/default_img_desc.jpg';
+
+  if (window.matchMedia('(min-width: 1440px)').matches) {
+    return defaultImageUrlDesc;
+  } else if (window.matchMedia('(min-width: 768px)').matches) {
+    return defaultImageUrlTab;
+  } else {
+    return defaultImageUrlMob;
+  }
+}
+
+export { displayTitle, displayCategory, setImageSrc };
