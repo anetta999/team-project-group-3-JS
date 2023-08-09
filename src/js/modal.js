@@ -21,11 +21,14 @@ backdrop.addEventListener('click', onClickBackdrop);
 
 async function showBook(evt) {
   evt.preventDefault();
-  if (evt.target.nodeName !== 'IMG') {
+  console.log(evt.target.nodeName);
+  if (evt.target.nodeName === 'UL' || evt.target.nodeName === 'BUTTON') {
     return;
   }
+ 
   showLoader();
   const bookId = evt.target.id;
+  console.log(bookId);
 
   let addList = JSON.parse(localStorage.getItem(BOOK_LS_KEY)) || [];
 
@@ -38,7 +41,6 @@ async function showBook(evt) {
 
     backdrop.classList.remove('is-hidden');
     bodyElement.classList.add('no-scroll');
-    // modal.classList.add('scroll');
     window.addEventListener('keydown', onPressESC);
 
 
