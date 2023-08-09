@@ -2,9 +2,6 @@
   z-index: 100;
   position: fixed;
   width: 100%;
-
-  /* min-width: 320px; */
-  /* max-width: 375px; */
 }
 
 .header-wrap {
@@ -50,7 +47,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  transition: all 0.3s var(--transition-func);
+  transition: all 250ms var(--transition-func);
 }
 .toggle-button::after {
   content: '';
@@ -63,7 +60,7 @@
   background: linear-gradient(180deg, #dcdcdc 0%, #f7f7f7 100%);
   border-radius: 50%;
   transform: translateX(0);
-  transition: all 0.3s var(--transition-func);
+  transition: all 250ms var(--transition-func);
 }
 .toggle-button:checked::after {
   transform: translateX(calc(100% + 3px));
@@ -102,8 +99,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../img/menu-group.png) 50% 100% no-repeat,
-    var(--gradient-bcg-color);
   z-index: 99;
   transform: translateY(-100%);
   transition: transform 250ms var(--transition-func);
@@ -117,9 +112,10 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between;
   padding-top: 84px;
-  padding-bottom: 70px;
+  padding-bottom: 20px;
+  background: url(../img/menu-group.png) 50% 100% no-repeat,
+    var(--gradient-bcg-color);
 }
 
 .mob-user {
@@ -166,10 +162,6 @@
   text-transform: uppercase;
 }
 
-.mob-header-list-shopping {
-  margin-bottom: 16px;
-}
-
 .header-link-shopping,
 .mob-link-shopping {
   display: flex;
@@ -193,7 +185,8 @@
   padding: 8px 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s var(--transition-func);
+  transition: all 250ms var(--transition-func);
+  border: 2px solid transparent;
 }
 
 .active-link-mob {
@@ -206,7 +199,7 @@
 
 .no-active-tab {
   font-weight: 500;
-  transition: all 0.3s var(--transition-func);
+  transition: all 250ms var(--transition-func);
 }
 
 .mob-user-logout {
@@ -217,6 +210,8 @@
   border-radius: 18px;
   width: 118px;
   height: 48px;
+  position: absolute;
+  bottom: 20;
 }
 
 .mob-user-logout-text {
@@ -260,16 +255,20 @@
     align-items: center;
   }
 
-  .header-list-home {
-    margin-right: 16px;
-  }
-
   .header-link-shopping {
     color: var(--light-theme-primary-text-color);
   }
 
   .shopping-icon {
     fill: var(--light-theme-primary-text-color);
+  }
+
+  .active-tab {
+    margin-right: 16px;
+  }
+
+  .no-active-tab {
+    margin-right: 24px;
   }
 
   .toggle-wrap {
@@ -285,41 +284,29 @@
     background: var(--dump-bcg-color);
     border-color: transparent;
   }
+
+  .header-user svg {
+    fill: var(--light-theme-bcg-header);
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .header-logo {
     margin-right: 76px;
-    transition: all 0.3s var(--transition-func);
+    transition: all 250ms var(--transition-func);
   }
 
-  .header-logo:hover {
-    scale: 1.1;
+  .header-logo:is(:hover, :focus) {
+    transform: translateX(20%);
   }
 
-  .header-list-home {
+  .active-tab {
     margin-right: 24px;
-  }
-
-  .header-user {
-    transition: all 0.3s var(--transition-func);
-  }
-
-  .active-tab:hover,
-  .active-tab:focus,
-  .header-user:hover,
-  .header-user:focus {
-    border-radius: 6px;
-  }
-
-  .no-active-tab:hover,
-  .no-active-tab:focus {
-    scale: 1.1;
   }
 
   .header-list-shopping span {
     transform-style: preserve-3d;
-    transition: all 0.3s var(--transition-func);
+    transition: all 250ms var(--transition-func);
   }
 
   .header-list-shopping span:after {
@@ -327,14 +314,38 @@
     left: 0;
     width: 100%;
     position: absolute;
-    content: 'BUY';
+    content: 'Buy';
     text-align: end;
     transform-origin: left bottom;
     transform: rotateX(90deg);
   }
 
-  .header-list-shopping span:hover {
+  .header-list-shopping:is(:hover, :focus) span {
     transform-origin: center bottom;
     transform: rotateX(-90deg) translateY(100%);
+  }
+
+  .header-user,
+  .header-user-name,
+  .header-user-name svg {
+    transition: all 250ms var(--transition-func);
+  }
+
+  .active-tab:is(:hover, :focus),
+  .header-user:is(:hover, :focus) {
+    border: 2px solid var(--dump-bcg-color);
+    background-color: var(--light-theme-bcg-header);
+  }
+
+  .header-user:is(:hover, :focus) .header-user-name {
+    color: var(--light-theme-primary-text-color);
+  }
+
+  .header-user:is(:hover, :focus) svg {
+    fill: var(--light-theme-primary-text-color);
+  }
+
+  .no-active-tab:is(:hover, :focus) {
+    transform: translateX(20%);
   }
 }
