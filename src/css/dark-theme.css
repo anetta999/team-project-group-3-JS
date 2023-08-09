@@ -11,8 +11,7 @@ body.dark-theme {
     fill: #F3F3F3;
 }
 
-.dark-theme .header-link-home,
-.mob-link-home {
+.dark-theme .header-link-home {
     color: var(--dark-theme-primary-text-color);
 }
 
@@ -81,6 +80,14 @@ body.dark-theme {
 
 .dark-theme .shop-text-backgr {
     color: var(--dark-theme-categories-text-color);
+}
+
+.dark-theme .shop-secondary-title {
+    color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .shop-desc {
+    color: var(--dark-theme-primary-text-color);
 }
 
 /*************** Modal ****************/
