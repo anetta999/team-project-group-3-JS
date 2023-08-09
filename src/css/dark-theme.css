@@ -83,6 +83,10 @@ body.dark-theme {
     color: var(--dark-theme-categories-text-color);
 }
 
+.dark-theme .dark-desc {
+    color: var(--dark-theme-primary-text-color);
+}
+
 /*************** Modal ****************/
 .dark-theme .modal {
     background: var(--dark-theme-bcg);
