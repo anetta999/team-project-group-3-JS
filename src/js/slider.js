@@ -85,7 +85,7 @@ const creatImg = suppurtImg
           src="${img}" alt="${title}" 
           height="32"
           srcset="
-          ${img} 1x
+          ${img} 1x,
           ${img2x} 2x"/>
         </picture>
     </a>
@@ -93,7 +93,7 @@ const creatImg = suppurtImg
   })
   .join('');
 
-console.log(creatImg);
+// console.log(creatImg);
 support.insertAdjacentHTML('afterbegin', creatImg);
 
 const btnBottom = document.querySelector('.support-btn-js');
