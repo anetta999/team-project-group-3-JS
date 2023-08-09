@@ -11,6 +11,8 @@ import { showLoader, hideLoader } from './loader.js';
 const modal = document.querySelector('.modal');
 const list = document.querySelector('.books-container-list');
 const backdrop = document.querySelector('.backdrop');
+const bodyElement = document.body;
+
 
 const BOOK_LS_KEY = 'shopplist';
 
@@ -35,6 +37,8 @@ async function showBook(evt) {
     closeBtn.addEventListener('click', closeModal);
 
     backdrop.classList.remove('is-hidden');
+    bodyElement.classList.add('no-scroll');
+    // modal.classList.add('scroll');
     window.addEventListener('keydown', onPressESC);
 
 
@@ -55,9 +59,10 @@ async function showBook(evt) {
         addToShoppList(evt, addBtn, modalEl, data);
       });
     }
-    hideLoader();
   } catch (error) {
     console.error(error);
+  } finally{
+    hideLoader();
   }
 }
 
@@ -158,12 +163,14 @@ function createMarkupCardModal(arr) {
 
 function closeModal() {
   backdrop.classList.add('is-hidden');
+  bodyElement.classList.remove('no-scroll');
   window.removeEventListener('keydown', onPressESC);
 }
 
 function onPressESC(evt) {
   if (evt.code === 'Escape') {
     closeModal();
+    bodyElement.classList.remove('no-scroll');
     window.removeEventListener('keydown', onPressESC);
   }
 }
@@ -173,3 +180,5 @@ function onClickBackdrop(evt) {
     closeModal();
   }
 }
+
+
