@@ -6,6 +6,8 @@
 @import './slider.css';
 @import './shopping-list-section.css';
 @import './dark-theme.css';
+@import './pagination.css';
+
 
 .support-container {
   display: none;

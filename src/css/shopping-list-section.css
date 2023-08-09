@@ -110,6 +110,11 @@
 /**-----------------------------------------------------*/
 
 /* card style */
+.wrapper-decr {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 .shop-list-books {
   margin-top: 40px;
@@ -166,9 +171,9 @@
 }
 
 .shop-info-book {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .shop-book-img {
@@ -304,6 +309,11 @@
   background-size: 32px 11px;
   background-position: center;
   filter: grayscale(100%);
+
+}
+
+.dark-theme .shop-link-amazon {
+  filter: brightness(0) invert(1);
 }
 
 .shop-link-applebook {
