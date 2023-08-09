@@ -60,14 +60,14 @@ function createCategoryBooksMarkap(arr) {
   return arr
     .map(({ _id, book_image, title, author }) => {
       const imageSrc = book_image ? book_image : imgSrc;
-      return `<li class="book-card">
-  <a href="" class="book-card-thumb"
+      return `<li class="book-card" id="${_id}">
+  <a href="" class="book-card-thumb" id="${_id}"
     ><div class="thumb">
     <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
-    <div class="overlay"><p> quick view</p></div>
+    <div id="${_id}" class="overlay"><p id="${_id}"> quick view</p></div>
     </div>
-    <p class="book-card-title">${title}</p>
-    <p class="book-card-author">${author}</p
+    <p id="${_id}" class="book-card-title">${title}</p>
+    <p id="${_id}" class="book-card-author">${author}</p
   ></a></li>`;
     })
     .join('');
