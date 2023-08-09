@@ -90,11 +90,14 @@ body.dark-theme {
     color: var(--dark-theme-primary-text-color);
 }
 
+.dark-theme .shop-desc {
+    overflow-y: hidden;
+}
 /*************** Modal ****************/
 .dark-theme .modal {
     background: var(--dark-theme-bcg);
     border: 2px solid var(--dark-theme-bcg);
-    overflow: inherit;
+    overflow: hidden;
 }
 
 .dark-theme .modal-add-btn {
@@ -137,6 +140,10 @@ body.dark-theme {
     border: 2px solid var(--dump-bcg-color);
     background-color: var(--dump-bcg-color);
     color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .modal-book-info {
+    overflow-y: hidden;
 }
 
 @media screen and (min-width: 768px) {
