@@ -42,7 +42,7 @@ const selectors = {
         position: 'Developer',
         photo: team_3,
         github: 'https://github.com/Fetivol',
-        linkedin: 'https://www.linkedin.com/',
+        linkedin: 'www.linkedin.com/in/volodymyr-fetisov-7aa069173',
     },
     {
         name: 'Аnna <br> Kutsenko',
