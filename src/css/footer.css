@@ -1,7 +1,11 @@
-.footer {
-  position: absolute;
-    bottom: 0px;
-    width: 100%;
+html, body {
+  min-height: 100%;
+}
+
+.position {
+  
+  min-height: calc(100vh - 62px);
+
 }
 
 .footer-container {
