@@ -1,7 +1,9 @@
 .books {
   display: block;
 }
-
+/* .books-container {
+  min-height: 200px;
+} */
 .books-image {
   display: block;
 }

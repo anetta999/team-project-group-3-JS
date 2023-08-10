@@ -31,6 +31,7 @@ listEl.addEventListener('click', e => {
 
 // Geting data for special Category and drowing HTML elements
 async function displayCategory(chosenCategory) {
+  booksContainerList.innerHTML = '';
   showLoader();
   try {
     const data = await fetchSelectCategory(chosenCategory);
