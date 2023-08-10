@@ -189,10 +189,6 @@
   border: 2px solid transparent;
 }
 
-/* .active-link-mob {
-  color: var(--light-theme-primary-text-color);
-} */
-
 .active-shopping-icon {
   fill: var(--light-theme-primary-text-color);
 }
