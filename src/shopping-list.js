@@ -8,7 +8,7 @@ const shopList = document.querySelector('.js-shop-list'); //list on link where a
 const shopBgd = document.querySelector('.js-shop-background'); //link div with base img
 let data = JSON.parse(localStorage.getItem('shopplist')); // get from localStorage
 
-let check = [];
+// let check = [];
 const BOOK_LS_KEY = 'shopplist';
 let cardRef = null;
 
@@ -123,9 +123,6 @@ function removeBookFromLocalStorage(id) {
   // console.log(filtredArr);
   localStorage.setItem('shopplist', JSON.stringify(filtredArr));
   if (!filtredArr.length) {
-    createEmptyCart();
-  }
-  if (check.length < 1) {
     createEmptyCart();
   }
 }
