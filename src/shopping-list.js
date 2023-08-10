@@ -4,7 +4,6 @@ import './js/slider.js';
 
 import { fetchBookId } from './js/api';
 
-
 const shopList = document.querySelector('.js-shop-list'); //list on link where adding books images
 const shopBgd = document.querySelector('.js-shop-background'); //link div with base img
 let data = JSON.parse(localStorage.getItem('shopplist')); // get from localStorage
@@ -55,7 +54,7 @@ function renderBookCard(array) {
         }) => {
           const card = `<li data-id=${_id} class="shop-item-book">
        <img class="shop-book-img" alt="Wrapper of book" src="${book_image}" />
-       <div class="wrapper-decr">
+       <div class="wrapper-descr">
               <div class="shop-info-book">
             <h2 class="shop-secondary-title header-link-shopping ">${title}</h2>
             <p class="shop-category ">${list_name}</p>

@@ -24,6 +24,7 @@
   letter-spacing: -0.88px;
 
   display: flex;
+  align-items: center;
 }
 .svg-title {
   margin-left: 12px;
