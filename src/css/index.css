@@ -11,6 +11,7 @@
 @import './dark-theme.css';
 @import './scroll-up.css';
 @import './loader.css';
+@import './footer.css';
 
 .home {
   padding-top: 104px;

@@ -5,7 +5,9 @@
 @import './header.css';
 @import './slider.css';
 @import './shopping-list-section.css';
+@import './footer.css';
 @import './dark-theme.css';
+
 
 .support-container {
   display: none;

@@ -1,0 +1,230 @@
+/* .footer {
+  position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+} */
+
+.footer-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    border: 1.5px solid var(--light-theme-primary-text-color);
+    border-radius:8px 8px 0 0;
+    background-color: var(--light-theme-bcg-header);
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+ .footer-text {
+    color: var(--light-theme-primary-text-color);
+    letter-spacing: -.64px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.12;
+    text-align: center;
+} 
+
+.footer-gap {
+    color: var(--light-theme-primary-text-color);
+    letter-spacing: -.64px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.footer-icon {
+    margin: 0 5px 0 5px;
+    fill: #4f2ee8;
+}
+
+.footer-link {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--light-theme-primary-text-color);
+    letter-spacing: -.64px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.12;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .footer-gap {
+        display: none;
+    }
+
+    .footer-text {
+        font-weight: 500;
+    }
+
+    .footer-link {
+        font-weight: 700;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .footer-container{
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .footer-link:hover {
+        color: #4f2ee8; 
+    }
+
+}
+
+
+
+/* ______modal-team_____ */
+
+.no-scroll {
+    overflow: hidden;
+  }
+  
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .backdrop-team { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(17, 17, 17, 0.5);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    overflow-y: scroll;
+    padding: 104px 20px 100px 20px;
+  }
+  
+  .modal-btn-team {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    top: 12px;
+    right: 12px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .modal-btn-svg-team {
+    width: 24px;
+    height: 24px;
+    stroke: #111;
+  }
+  
+  .modal-team {
+    width: 335px;
+    margin: 0 auto;
+    border-radius: 18px;
+    border: 2px solid #111;
+    background-color: #202024;
+    background: var(--light-theme-bcg-header);
+    padding: 40px 22px;
+    transform: translate(0);
+    transition: .5s;
+  }
+
+  .team-list{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .team-list-item {
+    width: 180px;
+    height: auto;
+  }
+
+  .modal-title-team {
+    color: #111;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.6;
+    text-align: center;
+    text-decoration: underline;
+    box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
+    margin-bottom: 20px;
+  }
+
+  .team-photo {
+    height: 180px;
+    width: 120%;
+    object-fit: cover;
+    display: block;
+    text-align: center;
+    border-radius: 18px;
+    border: 1.3px solid #111; 
+    margin-bottom: 15px;
+  }
+
+  .team-name {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .team-position {
+    text-align: center;
+    color: var(--light-theme-primary-text-color);
+    font-weight: 400;
+    margin-bottom: 7px;
+    
+  }
+
+  .team-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  
+
+  @media screen and (min-width: 768px) {
+    .modal-team {
+        width: 579px;
+      }
+  }
+
+  @media screen and (min-width: 1440px){
+    .modal-team {
+        width: 920px;
+    }
+
+    .team-photo {
+        transition: box-shadow .4s cubic-bezier(.4,0,.2,1);
+    }
+    .team-photo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 30px;
+    }
+
+    .icon-svg {
+        mix-blend-mode: luminosity;
+      }
+
+    .links-info {
+        transition: box-shadow .4s cubic-bezier(.4,0,.2,1); 
+    }
+
+    .links-info:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 30px;
+    }
+  }
