@@ -66,8 +66,8 @@ function createCategoryBooksMarkap(arr) {
     <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
     <div id="${_id}" class="overlay"><p id="${_id}"> quick view</p></div>
     </div>
-    <p id="${_id}" class="book-card-title">${title}</p>
-    <p id="${_id}" class="book-card-author">${author}</p
+    <p id="${_id}" class="book-card-title">${titleLength(title)}</p>
+    <p id="${_id}" class="book-card-author">${authorLength(author)}</p
   ></a></li>`;
     })
     .join('');
@@ -87,4 +87,23 @@ function setImageSrc() {
   }
 }
 
-export { displayTitle, displayCategory, setImageSrc };
+function titleLength(title) {
+  if (title.length > 17) {
+    return title.slice(0, 17) + '...';
+  }
+  return title;
+}
+
+function authorLength(author) {
+  if (author.length > 28) {
+    return author.slice(0, 28) + '...';
+  }
+  return author;
+}
+export {
+  displayTitle,
+  displayCategory,
+  setImageSrc,
+  titleLength,
+  authorLength,
+};

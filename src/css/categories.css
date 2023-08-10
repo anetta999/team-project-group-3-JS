@@ -92,10 +92,10 @@ li {
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.36px;
-    transform: scale(1) translateX(0);
+    transform: translateX(0);
     transition: all 250ms var(--transition-func);
   }
   .category_list_element:is(:hover, :focus) {
-    transform: scale(1.06) translateX(6%);
+    transform: translateX(6%);
   }
 }

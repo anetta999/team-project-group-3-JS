@@ -1,5 +1,11 @@
 import { fetchTopBooks } from './api.js';
-import { displayTitle, displayCategory, setImageSrc } from './categories.js';
+import {
+  displayTitle,
+  displayCategory,
+  setImageSrc,
+  titleLength,
+  authorLength,
+} from './categories.js';
 import { showCategoryListData } from './categories-list.js';
 import { showLoader, hideLoader } from './loader.js';
 
@@ -50,8 +56,8 @@ function createBooks(arr) {
       <img id="${_id}" src="${imageSrc}" alt="${title}" class="books-image" onerror="handleImageError(this, ${imgSrc})" />
       <div class="overlay" id="${_id}"><p id="${_id}"> quick view</p></div>
     </div>
-    <p id="${_id}" class="book-card-title">${title}</p>
-    <p id="${_id}" class="book-card-author">${author}</p>
+    <p id="${_id}" class="book-card-title">${titleLength(title)}</p>
+    <p id="${_id}" class="book-card-author">${authorLength(author)}</p>
     </a></li>`;
     })
     .join('');
