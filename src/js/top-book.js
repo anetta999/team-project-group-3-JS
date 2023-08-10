@@ -10,10 +10,12 @@ import { showCategoryListData } from './categories-list.js';
 import { showLoader, hideLoader } from './loader.js';
 
 async function displayTopBooks() {
+  const topBookCard = document.querySelector('.books-container-list');
+  topBookCard.innerHTML = '';
   showLoader();
+
   try {
     const response = await fetchTopBooks();
-    const topBookCard = document.querySelector('.books-container-list');
 
     displayTitle('Best Sellers Books');
 
