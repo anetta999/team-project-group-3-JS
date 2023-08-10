@@ -3,9 +3,7 @@ html, body {
 }
 
 .position {
-  
   min-height: calc(100vh - 62px);
-
 }
 
 .footer-container {
@@ -229,14 +227,7 @@ html, body {
         fill: #EAC645;
     }
 
-
-
-    /* .links-info {
-        transition: box-shadow .4s cubic-bezier(.4,0,.2,1); 
+    .modal-btn-svg-team:hover {
+        stroke: #EAC645;
     }
-
-    .links-info:hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px;
-    } */
   }

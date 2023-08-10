@@ -45,7 +45,6 @@
   margin: 0 auto;
   border-radius: 18px;
   border: 2px solid #111;
-  /* background-color: #202024; */
   background: var(--light-theme-bcg-header);
   padding: 40px 22px;
   transform: translate(0);
@@ -94,10 +93,6 @@
 .modal-link-svg{
   filter: grayscale(100%);
 }
-
-/* .dark-amazon {
-  filter: brightness(0) invert(1);
-} */
 
 .modal-add-btn {
   width: 211px;
