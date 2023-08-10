@@ -7,7 +7,8 @@ import { fetchBookId } from './js/api';
 const shopList = document.querySelector('.js-shop-list'); //list on link where adding books images
 const shopBgd = document.querySelector('.js-shop-background'); //link div with base img
 let data = JSON.parse(localStorage.getItem('shopplist')); // get from localStorage
-// console.log(data);
+
+// let check = [];
 const BOOK_LS_KEY = 'shopplist';
 let cardRef = null;
 
@@ -19,13 +20,13 @@ if (data !== null) {
 async function showBook(_id) {
   try {
     data = await fetchBookId(_id);
-    console.log(data);
+    // console.log(data);
     return await data;
   } catch {
     console.error(error);
   }
 }
-// showBook(_id);
+
 // function render card this books from the local storage
 
 function renderBookCard(array) {
@@ -117,14 +118,11 @@ function onBtnTrashClick(evt) {
 
 function removeBookFromLocalStorage(id) {
   data = JSON.parse(localStorage.getItem('shopplist'));
-  console.log(data);
+  // console.log(data);
   const filtredArr = data.filter(card => card._id !== id);
-  console.log(filtredArr);
+  // console.log(filtredArr);
   localStorage.setItem('shopplist', JSON.stringify(filtredArr));
   if (!filtredArr.length) {
-    createEmptyCart();
-  }
-  if (check.length < 1) {
     createEmptyCart();
   }
 }

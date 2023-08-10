@@ -8,8 +8,8 @@ scrollUpButton.addEventListener('click', () =>
 document.addEventListener('scroll', throttle(scrollHandler, 1000));
 
 function scrollHandler() {
-  let rootElement = document.documentElement; //take body elem
-  let scrollTop = rootElement.scrollTop; //how many pixels i can scroll down to the last element
+  let rootElement = document.documentElement;
+  let scrollTop = rootElement.scrollTop;
   let scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
 
   if (scrollTop / scrollTotal > 0.05) {
