@@ -60,7 +60,6 @@ async function showBook(evt) {
   } catch (error) {
     console.error(error);
   } finally {
-    hideLoader();
   }
 }
 
