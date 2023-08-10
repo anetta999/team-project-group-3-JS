@@ -2,9 +2,7 @@ import './js/header.js';
 import './js/dark-theme.js';
 import './js/slider.js';
 
-// import axios from 'axios';
 import { fetchBookId } from './js/api';
-/// import { Loading } from 'notiflix';
 
 const shopList = document.querySelector('.js-shop-list'); //list on link where adding books images
 const shopBgd = document.querySelector('.js-shop-background'); //link div with base img
@@ -55,17 +53,19 @@ function renderBookCard(array) {
           buy_links,
         }) => {
           const card = `<li data-id=${_id} class="shop-item-book">
-    <img class="shop-book-img" alt="Wrapper of book" src="${book_image}" />
-          <div class="shop-info-book">
-            <h2 class="shop-secondary-title">${title}</h2>
-            <p class="shop-category">${list_name}</p>
-            <p class="shop-desc">${description}</p>
+       <img class="shop-book-img" alt="Wrapper of book" src="${book_image}" />
+       <div class="wrapper-descr">
+              <div class="shop-info-book">
+            <h2 class="shop-secondary-title header-link-shopping ">${title}</h2>
+            <p class="shop-category ">${list_name}</p>
+            <p class="shop-desc dark-desc ">${description}</p>
+                </div>
             <div class="shop-author-wrapper">
               <p class="shop-author">${author}</p>
               <ul class="shop-platform-list">
         
                 
-                  <a href="${buy_links[0].url}" class="shop-link-amazon" noopener noreferrer>
+                  <a href="${buy_links[0].url}" class="shop-link-amazon dark-amazon" noopener noreferrer>
                                        </a>
  
                   <a href="${buy_links[1].url}" class="shop-link-applebook" noopener noreferrer>
@@ -77,8 +77,10 @@ function renderBookCard(array) {
                  
   
               </ul>
-            </div>
+        
           </div>
+          </div> 
+   
            <button type="button" class="shop-delete-btn js-delete-btn">
                   </button>
         </li>`;

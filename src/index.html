@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/src/img/favicon.ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/src/img/favicon.ico/favicon-16x16.png"
+    />
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Book</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
 
-<head>
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="/src/img/favicon.ico/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16"
-    href="/src/img/favicon.ico/favicon-16x16.png">
-  <meta charset="UTF-8" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Book</title>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-    integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
-
-<body>
-  <!-- ❗️❗️❗️ Add partials like so for every page -->
-  <!-- <header class="header">
+  <body>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <!-- <header class="header">
       <div class="container header-container"> -->
-  <include src="./partials/header.html"></include>
-  <!-- </div> -->
-  <!-- </header> -->
-  <include src="./partials/loader.html"></include>
+    <include src="./partials/header.html"></include>
+    <!-- </div> -->
+    <!-- </header> -->
 
-  <main>
-    <section class="home">
-      <div class="container home-container">
-        <div class="tablet-container">
-          <include src="./partials/categories.html"></include>
-          <include src="./partials/slider.html"></include>
+    <main>
+      <section class="home">
+        <div class="container home-container">
+          <div class="tablet-container">
+            <include src="./partials/categories.html"></include>
+            <include src="./partials/slider.html"></include>
+          </div>
+
+          <include src="./partials/home.html"></include>
+          <!-- <include src="./partials/home-category.html"></include> -->
+
+          <include src="./partials/modal.html"></include>
         </div>
-
-        <include src="./partials/home.html"></include>
-        <!-- <include src="./partials/home-category.html"></include> -->
-
-        <include src="./partials/modal.html"></include>
-      </div>
-    </section>
-    <include src="./partials/scaroll-up.html"></include>
-  </main>
+      </section>
+      <include src="./partials/scaroll-up.html"></include>
+    </main>
   <footer class="footer">
     <include src="./partials/footer.html"></include>
   </footer>
@@ -50,3 +59,4 @@
 </body>
 
 </html>
+

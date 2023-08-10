@@ -55,6 +55,11 @@
 /* 
 /**---------optimization img book with devices ------------*/
 
+.wrapper-descr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .shop-img-backgr {
   margin-top: 14px;
   margin-left: auto;
@@ -165,11 +170,11 @@
   }
 }
 
-.shop-info-book {
+/* .shop-info-book {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 .shop-book-img {
   border-radius: 8px;
@@ -221,16 +226,16 @@
 
 .shop-author-wrapper {
   display: flex;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   align-items: end;
   justify-content: space-between;
 }
-
+/* 
 @media screen and (min-width: 768px) {
   .shop-author-wrapper {
     margin-top: 48px;
   }
-}
+} */
 
 .shop-author {
   font-style: italic;

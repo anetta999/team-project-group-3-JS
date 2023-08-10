@@ -5,7 +5,7 @@ import razom from '../img/razom.png';
 import hunger from '../img/action-against-hunger.png';
 import vision from '../img/word-vision.png';
 import prytula from '../img/sergiy-prytula.png';
-import corps from '../img/medecans-sans-frontieres.png';
+import corps from '../img//international-medical-corps.png';
 import frontieres from '../img/medecans-sans-frontieres.png';
 import children2x from '../img/save-the-children-2x.png';
 import hope2x from '../img/project-hope-2x.png';
@@ -31,22 +31,10 @@ const suppurtImg = [
     img2x: hope2x,
   },
   {
-    title: 'UNITED24',
-    url: 'https://u24.gov.ua/uk',
-    img: united,
-    img2x: united2x,
-  },
-  {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
     img: corps,
     img2x: corps2x,
-  },
-  {
-    title: 'Medicins Sans Frontieres',
-    url: 'https://www.msf.org/ukraine',
-    img: frontieres,
-    img2x: frontieres2x,
   },
   {
     title: 'RAZOM',
@@ -61,26 +49,38 @@ const suppurtImg = [
     img2x: hunger2x,
   },
   {
-    title: 'World vision',
-    url: 'https://www.wvi.org/emergencies/ukraine',
-    img: vision,
-    img2x: vision2x,
-  },
-  {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
     img: prytula,
     img2x: prytula2x,
+  },
+  {
+    title: 'UNITED24',
+    url: 'https://u24.gov.ua/uk',
+    img: united,
+    img2x: united2x,
+  },
+  {
+    title: 'Medicins Sans Frontieres',
+    url: 'https://www.msf.org/ukraine',
+    img: frontieres,
+    img2x: frontieres2x,
+  },
+  {
+    title: 'World vision',
+    url: 'https://www.wvi.org/emergencies/ukraine',
+    img: vision,
+    img2x: vision2x,
   },
 ];
 
 const support = document.querySelector('.support-list-js');
 
 const creatImg = suppurtImg
-  .map(({ url, title, img, img2x }, idx) => {
+  .map(({ url, title, img, img2x}, idx) => {
     return `<li class="support-item">
     <span class="support-span">0${idx + 1}</span>
-    <a href="${url}" class="support-link"> <picture>
+      <a href="${url}" class="support-link" target="_blank"> 
           <img class="support-image"
           src="${img}" alt="${title}" 
           height="32"
@@ -88,7 +88,7 @@ const creatImg = suppurtImg
           ${img} 1x,
           ${img2x} 2x"/>
         </picture>
-    </a>
+    </a> 
     </li> `;
   })
   .join('');
@@ -113,3 +113,7 @@ function goTop() {
   btnBottom.style.display = 'flex';
 }
 btnTop.addEventListener('click', goTop);
+
+
+
+

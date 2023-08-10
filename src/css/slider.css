@@ -24,6 +24,7 @@
   letter-spacing: -0.88px;
 
   display: flex;
+  align-items: center;
 }
 .svg-title {
   margin-left: 12px;
@@ -120,6 +121,7 @@
   }
   .support-list {
     height: 292px;
+    margin-top: 42px;
   }
   .support-btn {
     width: 38px;

@@ -6,13 +6,11 @@ import aplle_2x from '../img/image2@2x.png';
 import bookshop from '../img/image3@1x.png';
 import bookshop_2x from '../img/image3@2x.png';
 import svg from '../img/sprite.svg';
-import { showLoader, hideLoader } from './loader.js';
 
 const modal = document.querySelector('.modal');
 const list = document.querySelector('.books-container-list');
 const backdrop = document.querySelector('.backdrop');
 const bodyElement = document.body;
-
 
 const BOOK_LS_KEY = 'shopplist';
 
@@ -25,8 +23,7 @@ async function showBook(evt) {
   if (evt.target.nodeName === 'UL' || evt.target.nodeName === 'BUTTON') {
     return;
   }
- 
-  showLoader();
+
   const bookId = evt.target.id;
   console.log(bookId);
 
@@ -42,7 +39,6 @@ async function showBook(evt) {
     backdrop.classList.remove('is-hidden');
     bodyElement.classList.add('no-scroll');
     window.addEventListener('keydown', onPressESC);
-
 
     const addBtn = document.querySelector('.modal-add-btn');
     const modalEl = document.querySelector('.modal-remove-text');
@@ -63,8 +59,7 @@ async function showBook(evt) {
     }
   } catch (error) {
     console.error(error);
-  } finally{
-    hideLoader();
+  } finally {
   }
 }
 
@@ -182,5 +177,3 @@ function onClickBackdrop(evt) {
     closeModal();
   }
 }
-
-
