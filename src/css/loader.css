@@ -1,11 +1,10 @@
 .loader-is-hidden {
-  opacity: 0;
-  pointer-events: none;
+  /* pointer-events: none; */
   display: none;
 }
 
 .loader-open {
-  overflow: hidden;
+  /* overflow: hidden; */
   display: block;
 }
 
@@ -15,8 +14,8 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(198, 196, 196, 0.5);
-  overflow: hidden;
+  /* background: rgba(198, 196, 196, 0.5); */
+  background: transparent;
 }
 
 .loader {
