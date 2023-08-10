@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/src/img/favicon.ico/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/src/img/favicon.ico/favicon-16x16.png"
-    />
-    <meta charset="UTF-8" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./css/shopping-list.css" />
-    <title>Shopping list</title>
-  </head>
 
-  <body>
-    <!-- <header class="header">
-      <div class="container header-container"> -->
-    <include src="./partials/header-shopping-list.html"></include>
-    <!-- </div> -->
-    <!-- </header> -->
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/img/favicon.ico/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/img/favicon.ico/favicon-16x16.png" />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Bookshop, with the possibility of buying through Amazon, iBooks and offline store">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../node_modules/modern-normalize/modern-normalize.css">
 
-    <main>
-      <section class="shopping-list">
-        <div class="container shopping-list-container">
-          <include src="./partials/slider.html"></include>
-          <include src="./partials/shopping-list-section.html"></include>
-        </div>
-      </section>
-    </main>
+  <link rel="stylesheet" href="./css/shopping-list.css" />
+  <title>Shopping list</title>
+</head>
 
-    <script type="module" src="./shopping-list.js"></script>
-  </body>
+<body>
+  <include src="./partials/header-shopping-list.html"></include>
+
+  <main>
+    <section class="shopping-list">
+      <div class="container shopping-list-container">
+        <include src="./partials/slider.html"></include>
+        <include src="./partials/shopping-list-section.html"></include>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./shopping-list.js"></script>
+</body>
+
 </html>
