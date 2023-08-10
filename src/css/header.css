@@ -109,9 +109,7 @@
 }
 
 .mob-menu-wrap {
-  display: flex;
   height: 100%;
-  flex-direction: column;
   padding-top: 84px;
   padding-bottom: 20px;
   background: url(../img/menu-group.png) 50% 100% no-repeat,
