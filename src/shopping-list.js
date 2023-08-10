@@ -139,3 +139,5 @@ function createEmptyCart() {
 
   shopList.innerHTML = markupEmpty;
 }
+
+import './js/footer.js';
