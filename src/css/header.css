@@ -189,9 +189,9 @@
   border: 2px solid transparent;
 }
 
-.active-link-mob {
+/* .active-link-mob {
   color: var(--light-theme-primary-text-color);
-}
+} */
 
 .active-shopping-icon {
   fill: var(--light-theme-primary-text-color);
@@ -200,6 +200,14 @@
 .no-active-tab {
   font-weight: 500;
   transition: all 250ms var(--transition-func);
+}
+
+.no-active-tab .mob-link-home {
+  color: var(--ligth-theme-bcg-shoplist-block);
+}
+
+.active-tab .mob-link-shopping {
+  color: var(--light-theme-primary-text-color);
 }
 
 .mob-user-logout {
@@ -287,6 +295,7 @@
 
   .header-user svg {
     fill: var(--light-theme-bcg-header);
+    transition: all 250ms var(--transition-func);
   }
 }
 
