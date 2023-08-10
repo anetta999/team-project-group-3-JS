@@ -1,155 +1,169 @@
 body.dark-theme {
-    background-color: var(--dark-theme-bcg);
+  background-color: var(--dark-theme-bcg);
 }
 
 .dark-theme .header-wrap {
-    border: 1.5px solid #FFF;
-    background-color: var(--dark-theme-bcg-header);
+  border: 1.5px solid #fff;
+  background-color: var(--dark-theme-bcg-header);
 }
 
 .dark-theme .header-logo-icon-text {
-    fill: #F3F3F3;
+  fill: #f3f3f3;
 }
 
 .dark-theme .header-link-home {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .category_list_element {
-    color: var(--dark-theme-categories-text-color);
+  color: var(--dark-theme-categories-text-color);
 }
 
 .dark-theme .category_list_element.chosen_category {
-    color: var(--home-bcg-color);
-}
-
-.dark-theme .active-tab {
-    color: black;
-}
-
-.dark-theme .active-tab span {
-    color: var(--dark-theme-bcg-shoplist-block);
-}
-
-.dark-theme .active-tab svg {
-    fill: var(--dark-theme-bcg-shoplist-block);
-}
-
-.dark-theme .active-tab .header-link-home {
-    color: var(--dark-theme-bcg-shoplist-block);
+  color: var(--home-bcg-color);
 }
 
 .dark-theme .mob-open-btn {
-    stroke: var(--dark-theme-primary-text-color);
+  stroke: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .mob-close-btn {
-    stroke: var(--dark-theme-primary-text-color);
+  stroke: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .title-color1 {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .book-card-title {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .button-open-categories {
-    border: 2px solid var(--dump-bcg-color);
-    background: var(--dark-theme-bcg);
-    color: var(--dark-theme-primary-text-color);
+  border: 2px solid var(--dump-bcg-color);
+  background: var(--dark-theme-bcg);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .categories_list::-webkit-scrollbar-thumb {
-    background-color: var(--light-theme-categories-text-color);
+  background-color: var(--light-theme-categories-text-color);
 }
 
 /************* SHOPPING-LIST ***************/
 .dark-theme .header-link-shopping {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
-.dark-theme .shopping-icon {
-    fill: var(--dark-theme-primary-text-color);
+.dark-theme .header-link-shopping svg {
+  fill: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .shop-main-title {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .shop-text-backgr {
-    color: var(--dark-theme-categories-text-color);
+  color: var(--dark-theme-categories-text-color);
 }
-
 
 .dark-theme .shop-secondary-title {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .shop-desc {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .shop-desc {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 /*************** Modal ****************/
 .dark-theme .modal {
-    background: var(--dark-theme-bcg);
-    border: 2px solid var(--dark-theme-bcg);
-    overflow: hidden;
+  background: var(--dark-theme-bcg);
+  border: 2px solid var(--dark-theme-bcg);
+  overflow: hidden;
 }
 
 .dark-theme .modal-add-btn {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .modal-remove-btn {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .modal-remove-text {
-    color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .dark-theme .modal-book-info {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .modal-book-name {
-    color: var(--dark-theme-primary-text-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .modal-close-png {
-    stroke: var(--dark-theme-primary-text-color);
+  stroke: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .dark-amazon {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .dark-theme .modal-link-svg {
-    background: none;
+  background: none;
 }
 
 .dark-theme .modal-link-svg:hover {
-    background: none;
+  background: none;
 }
 
 .dark-theme .button-open-categories:is(:hover, :focus) {
-    border: 2px solid var(--dump-bcg-color);
-    background-color: var(--dump-bcg-color);
-    color: var(--dark-theme-primary-text-color);
+  border: 2px solid var(--dump-bcg-color);
+  background-color: var(--dump-bcg-color);
+  color: var(--dark-theme-primary-text-color);
 }
 
 .dark-theme .modal-book-info {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 @media screen and (min-width: 768px) {
-    .dark-theme .mob-close-btn {
-        display: none;
-    }
+  .dark-theme .active-tab,
+  .dark-theme .active-tab span,
+  .dark-theme .active-tab .header-link-home {
+    color: var(--dark-theme-bcg-shoplist-block);
+  }
+
+  .dark-theme .active-tab svg,
+  .dark-theme .shopping-icon {
+    fill: var(--dark-theme-bcg-shoplist-block);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .dark-theme .active-tab:is(:hover, :focus),
+  .dark-theme .header-user:is(:hover, :focus) {
+    background-color: var(--dark-theme-bcg-shoplist-block);
+  }
+
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-home,
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-shopping,
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-shopping svg {
+    transition: all 250ms var(--transition-func);
+  }
+
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-home,
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-shopping span,
+  .dark-theme .header-user:is(:hover, :focus) .header-user-name {
+    color: var(--dark-theme-primary-text-color);
+  }
+
+  .dark-theme .active-tab:is(:hover, :focus) .header-link-shopping svg,
+  .dark-theme .header-user:is(:hover, :focus) svg {
+    fill: var(--dark-theme-primary-text-color);
+  }
 }
