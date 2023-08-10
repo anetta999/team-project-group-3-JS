@@ -113,7 +113,3 @@ function goTop() {
   btnBottom.style.display = 'flex';
 }
 btnTop.addEventListener('click', goTop);
-
-
-
-
