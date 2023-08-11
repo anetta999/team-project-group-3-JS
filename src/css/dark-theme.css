@@ -131,6 +131,21 @@ body.dark-theme {
   overflow-y: hidden;
 }
 
+/*************** Footer ****************/
+
+.dark-theme .footer-container {
+  border: 1.5px solid var(--dark-theme-primary-text-color);
+  background-color: var(--dark-theme-bcg-header);
+}
+
+.dark-theme .footer-text {
+  color: var(--dark-theme-primary-text-color);
+}
+
+.dark-theme .footer-link {
+  color: var(--dark-theme-primary-text-color);
+}
+
 @media screen and (min-width: 768px) {
   .dark-theme .active-tab,
   .dark-theme .active-tab span,
