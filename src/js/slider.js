@@ -77,7 +77,7 @@ const suppurtImg = [
 const support = document.querySelector('.support-list-js');
 
 const creatImg = suppurtImg
-  .map(({ url, title, img, img2x}, idx) => {
+  .map(({ url, title, img, img2x }, idx) => {
     return `<li class="support-item">
     <span class="support-span">0${idx + 1}</span>
       <a href="${url}" class="support-link" target="_blank"> 
@@ -93,7 +93,6 @@ const creatImg = suppurtImg
   })
   .join('');
 
-// console.log(creatImg);
 support.insertAdjacentHTML('afterbegin', creatImg);
 
 const btnBottom = document.querySelector('.support-btn-js');
@@ -113,3 +112,30 @@ function goTop() {
   btnBottom.style.display = 'flex';
 }
 btnTop.addEventListener('click', goTop);
+
+const firstElement = support.firstChild;
+const lastElement = support.lastElementChild;
+
+const firstElemObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      btnTop.style.display = 'none';
+      btnBottom.style.display = 'flex';
+    } else {
+      return;
+    }
+  });
+});
+firstElemObserver.observe(firstElement);
+
+const lastElemObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      btnBottom.style.display = 'none';
+      btnTop.style.display = 'flex';
+    } else {
+      return;
+    }
+  });
+});
+lastElemObserver.observe(lastElement);
