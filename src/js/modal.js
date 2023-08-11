@@ -19,13 +19,13 @@ backdrop.addEventListener('click', onClickBackdrop);
 
 async function showBook(evt) {
   evt.preventDefault();
-  // console.log(evt.target.nodeName);
+
   if (evt.target.nodeName === 'UL' || evt.target.nodeName === 'BUTTON') {
     return;
   }
 
   const bookId = evt.target.id;
-  // console.log(bookId);
+ 
 
   let addList = JSON.parse(localStorage.getItem(BOOK_LS_KEY)) || [];
 
