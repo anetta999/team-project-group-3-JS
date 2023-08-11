@@ -57,7 +57,7 @@ function renderBookCard(array) {
        <img class="shop-book-img" alt="Wrapper of book" src="${book_image}" />
        <div class="wrapper-descr">
               <div class="shop-info-book">
-            <h2 class="shop-secondary-title header-link-shopping ">${title}</h2>
+            <h2 class="shop-secondary-title">${title}</h2>
             <p class="shop-category ">${list_name}</p>
             <p class="shop-desc dark-desc ">${description}</p>
                 </div>
