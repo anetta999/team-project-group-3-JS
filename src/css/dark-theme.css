@@ -167,3 +167,14 @@ body.dark-theme {
     fill: var(--dark-theme-primary-text-color);
   }
 }
+
+/************** FOOTER ************/
+.dark-theme .footer-container {
+  border: 1.5px solid #fff;
+  background-color: var(--dark-theme-bcg-header);
+}
+
+.dark-theme .footer-text,
+.dark-theme .footer-link {
+  color: #f3f3f3;
+}
